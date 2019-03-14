@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Asn3/render.cpp" "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Asn3/cmake-build-debug/CMakeFiles/Asn3.dir/render.cpp.o"
+  "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/render.cpp" "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/cmake-build-debug/CMakeFiles/Staurn.dir/render.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

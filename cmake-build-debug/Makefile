@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Asn3"
+CMAKE_SOURCE_DIR = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Asn3/cmake-build-debug"
+CMAKE_BINARY_DIR = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Asn3/cmake-build-debug/CMakeFiles" "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Asn3/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/cmake-build-debug/CMakeFiles" "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Asn3/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Asn3
+# Target rules for targets named Staurn
 
 # Build rule for target.
-Asn3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Asn3
-.PHONY : Asn3
+Staurn: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Staurn
+.PHONY : Staurn
 
 # fast build rule for target.
-Asn3/fast:
-	$(MAKE) -f CMakeFiles/Asn3.dir/build.make CMakeFiles/Asn3.dir/build
-.PHONY : Asn3/fast
+Staurn/fast:
+	$(MAKE) -f CMakeFiles/Staurn.dir/build.make CMakeFiles/Staurn.dir/build
+.PHONY : Staurn/fast
 
 render.o: render.cpp.o
 
@@ -129,7 +129,7 @@ render.o: render.cpp.o
 
 # target to build an object file
 render.cpp.o:
-	$(MAKE) -f CMakeFiles/Asn3.dir/build.make CMakeFiles/Asn3.dir/render.cpp.o
+	$(MAKE) -f CMakeFiles/Staurn.dir/build.make CMakeFiles/Staurn.dir/render.cpp.o
 .PHONY : render.cpp.o
 
 render.i: render.cpp.i
@@ -138,7 +138,7 @@ render.i: render.cpp.i
 
 # target to preprocess a source file
 render.cpp.i:
-	$(MAKE) -f CMakeFiles/Asn3.dir/build.make CMakeFiles/Asn3.dir/render.cpp.i
+	$(MAKE) -f CMakeFiles/Staurn.dir/build.make CMakeFiles/Staurn.dir/render.cpp.i
 .PHONY : render.cpp.i
 
 render.s: render.cpp.s
@@ -147,7 +147,7 @@ render.s: render.cpp.s
 
 # target to generate assembly for a file
 render.cpp.s:
-	$(MAKE) -f CMakeFiles/Asn3.dir/build.make CMakeFiles/Asn3.dir/render.cpp.s
+	$(MAKE) -f CMakeFiles/Staurn.dir/build.make CMakeFiles/Staurn.dir/render.cpp.s
 .PHONY : render.cpp.s
 
 # Help Target
@@ -158,7 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Asn3"
+	@echo "... Staurn"
 	@echo "... render.o"
 	@echo "... render.i"
 	@echo "... render.s"
