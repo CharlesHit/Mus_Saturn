@@ -1,7 +1,7 @@
 
 #include <string.h>
 #include "camera.h"
-#include "Shape.h"
+//#include "Shape.h"
 
 unsigned char frame[windowW * windowH * 3];
 
