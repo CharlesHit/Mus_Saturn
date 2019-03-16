@@ -3,9 +3,9 @@
 
 void idle()
 {
-    rotation('x', 0.001);
-    rotation('y', 0.001);
-    rotation('z', 0.001);
+    rotation('x', 0.01);
+    rotation('y', 0.01);
+    rotation('z', 0.01);
     //scalarization(0.01, 0.01, 0.01);
     OnDisplay();
 }
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 
     cameraInitialization();
 
-    scalarization(1.1, 1.1, 1.1);
+    scalarization(0.6, .6, .6);
 
     rotation('y', 3* M_PI / 12);
     rotation('x', 3*M_PI  / 12);

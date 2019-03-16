@@ -417,9 +417,9 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
     //light
     dmatrix_t pointLight;
     dmat_alloc(&pointLight, 4, 1);
-    pointLight.m[1][1] = 0.0;
-    pointLight.m[2][1] = 0.0;
-    pointLight.m[3][1] = 0.0;
+    pointLight.m[1][1] = 200.0;
+    pointLight.m[2][1] = 200.0;
+    pointLight.m[3][1] = 200.0;
     pointLight.m[4][1] = 1.0;
 
     for (v = 0 * M_PI; v <= 2.0 * M_PI; v += dv)
@@ -523,6 +523,14 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
     double dv = 2.0 * M_PI / 40.0;
     double du = M_PI / 16.0;
 
+    //light
+    dmatrix_t pointLight;
+    dmat_alloc(&pointLight, 4, 1);
+    pointLight.m[1][1] = 200.0;
+    pointLight.m[2][1] = 200.0;
+    pointLight.m[3][1] = 200.0;
+    pointLight.m[4][1] = 1.0;
+
     //points to draw sphere. the buffer here has same idea as in Torus'
     dmatrix_t P[3];
     for (int i = 0; i < 3; i++)
@@ -540,72 +548,88 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
     buffer.m[4][1] = 1;
     buffer = *perspective_projection(dmat_mult(&C, &buffer));
 
-    //light
-    dmatrix_t pointLight;
-    dmat_alloc(&pointLight, 4, 1);
-    pointLight.m[1][1] = 200;
-    pointLight.m[1][2] = 200;
-    pointLight.m[1][3] = 200;
-    pointLight.m[1][4] = 1;
-    pointLight = *perspective_projection(dmat_mult(&C, &pointLight));
 
     /* Notice: the sphere's u, that is every slices' euqation, only need run a half */
     for (v = 0.0; v <= 2 * M_PI; v += dv)
     {
         for (u = 0.0; u <= M_PI; u += du)
         {
-            //loc
             x.m[1][1] = radiumphere * cos(v) * sin(u);
             x.m[2][1] = radiumphere * sin(v) * sin(u);
             x.m[3][1] = radiumphere * cos(u);
             x.m[4][1] = 1;
-            x = *perspective_projection(dmat_mult(&C, &x));
             y.m[1][1] = radiumphere * cos(v) * sin(u + du);
             y.m[2][1] = radiumphere * sin(v) * sin(u + du);
             y.m[3][1] = radiumphere * cos(u + du);
             y.m[4][1] = 1;
-            y = *perspective_projection(dmat_mult(&C, &y));
             z.m[1][1] = radiumphere * cos(v + dv) * sin(u);
             z.m[2][1] = radiumphere * sin(v + dv) * sin(u);
             z.m[3][1] = radiumphere * cos(u);
             z.m[4][1] = 1;
-            z = *perspective_projection(dmat_mult(&C, &z));
             buffer.m[1][1] = radiumphere * cos(v + dv) * sin(u + du);
             buffer.m[2][1] = radiumphere * sin(v + dv) * sin(u + du);
             buffer.m[3][1] = radiumphere * cos(u + du);
             buffer.m[4][1] = 1;
+
+            //2.light and calculation of brightness;
+            //printf("x\n");write_dmatrix(&x); printf("y\n");write_dmatrix(&y); printf("z\n");write_dmatrix(&z);
+            dmatrix_t vecYX;dmat_alloc(&vecYX, 4, 1);
+            vecYX = *dmat_sub(&y, &x);
+
+            dmatrix_t vecXZ;dmat_alloc(&vecXZ, 4, 1);
+            vecXZ = *dmat_sub(&z, &x);
+
+            dmatrix_t vecNorm;
+            dmat_alloc(&vecNorm, 4, 1);
+            vecNorm = *crossProduct(vecYX, vecXZ);
+
+            //std::cout<<"yx:"<<std::endl;write_dmatrix(&vecYX);
+            //std::cout<<"xz:"<<std::endl;write_dmatrix(&vecXZ);
+
+            dmatrix_t pointCenter;
+            dmat_alloc(&pointCenter,4,1);
+            pointCenter.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1])/3;
+            pointCenter.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1])/3;
+            pointCenter.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1])/3;
+            pointCenter.m[4][1] = 1;
+
+            dmatrix_t vecLight;
+            dmat_alloc(&vecLight, 4, 1);
+            vecLight = *dmat_sub(&pointLight, &pointCenter);
+
+            //std::cout<<"\npointCenter:"<<std::endl; write_dmatrix(&pointCenter);
+            //std::cout<<"\nsourceLight:"<<std::endl;write_dmatrix(&pointLight);
+            //std::cout<<"\n***vecLight:"<<std::endl;write_dmatrix(&vecLight);
+            //std::cout<<"\n***vecNorm:"<<std::endl; write_dmatrix(&vecNorm);
+
+            //cos of two vector
+            double brightness = angle(vecNorm,vecLight);
+            if (brightness < 0)brightness = 0;
+
+            //std::cout<<"\nbrightness: "<<brightness<<"\n======="<<std::endl;
+
+            x = *perspective_projection(dmat_mult(&C, &x));
+            y = *perspective_projection(dmat_mult(&C, &y));
+            z = *perspective_projection(dmat_mult(&C, &z));
             buffer = *perspective_projection(dmat_mult(&C, &buffer));
 
-            Line(x.m[1][1],
-                 x.m[2][1],
-                 y.m[1][1],
-                 y.m[2][1]);
-            Line(x.m[1][1],
-                 x.m[2][1],
-                 z.m[1][1],
-                 z.m[2][1]);
+            Line(x.m[1][1],x.m[2][1],y.m[1][1],y.m[2][1]);
+            Line(x.m[1][1],x.m[2][1],z.m[1][1],z.m[2][1]);
+
+    //5.draw centre to light part(optional)
+            pointCenter = *perspective_projection(dmat_mult(&C, &pointCenter));
+            vecLight = *perspective_projection(dmat_mult(&C, &pointLight));
+            Line(pointCenter.m[1][1], pointCenter.m[2][1], vecLight.m[1][1], vecLight.m[2][1]);
+
             P[0] = x;
             P[1] = y;
             P[2] = z;
-
-            //brightness calculator
-            dmatrix_t vecNorm = *(dmat_normalize(P));
-            dmatrix_t pointCenter;
-            dmat_alloc(&pointCenter, 4, 1);
-            pointCenter = *dmat_init(&pointCenter, 0);
-            dmatrix_t vecLight;
-            dmat_alloc(&vecLight, 4, 1);
-            vecLight = *(dmat_sub(&pointCenter, &pointLight));
-            vecLight.m[4][1] = 0;
-
-            double brightness = ddot_product(&vecLight, &vecNorm) / ((dmat_norm(&vecLight)) * (dmat_norm(&vecNorm)));
-            if (brightness < 0)brightness = 0;
-
             XFillConvexPolygon(d, w, s, P, 3, r * brightness, g * brightness, b * brightness);
             P[0] = buffer;
             XFillConvexPolygon(d, w, s, P, 3, r * brightness, g * brightness, b * brightness);
         }
     }
+    //7.clean
     delete_dmatrix(&x);
     delete_dmatrix(&y);
     delete_dmatrix(&z);
@@ -615,8 +639,8 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
 void Draw()
 {
 
-    torus(0, 125, 0);
-//    sphere(1, 0, 0);
+    torus(200, 0, 0);
+    sphere(200, 0, 0);
 //    Torus t;
 //    Sphere s;
 //
