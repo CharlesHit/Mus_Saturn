@@ -66,26 +66,22 @@ double **dmatrix(int nrl, int nrh, int ncl, int nch)
 	return m;
 }
 
-
 void free_dmatrix(double **m, int nrl, int nrh, int ncl, int nch)
 
-{
-	int i;
+{ int i ;
 
-	for (i = nrh; i >= nrl; i--) {
-		free((char *)(m[i] + ncl));
-	}
-	free((char *)(m + nrl));
+    for (i = nrh ; i >= nrl ; i--) {
+        free((char *) (m[i] + ncl)) ;
+    }
+    free((char *) (m + nrl)) ;
 }
 
 
 void delete_dmatrix(dmatrix_t *A)
 
-{
-	free_dmatrix(A->m, 1, A->l, 1, A->c);
-	//free(A) ;
+{ free_dmatrix(A->m,1,A->l,1,A->c) ;
+    //free(A) ;
 }
-
 
 void dmat_alloc(dmatrix_t *A, int l, int c)
 

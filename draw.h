@@ -11,6 +11,8 @@
 const int X = 1;
 const int Y = 2;
 
+double angle_total = 0;  //totally rotated angle
+
 Display *d;
 Window w;
 XEvent e;
@@ -53,6 +55,7 @@ void OnKeyboard(unsigned char key, int x, int y)
     switch (key)
     {
         case 'q':
+            printf("total rotate angle: %f\n",angle_total);
             exit(0);
             break;
     }
@@ -358,29 +361,6 @@ void XFillConvexPolygon(Display *d, Window w, int s, dmatrix_t P[], int n, unsig
     free(intersections);
 }
 
-double getBrightness(dmatrix_t *vecBrightness, dmatrix_t *vecNormal)
-{
-    double angle = ddot_product(vecBrightness, vecNormal) / ((dmat_norm(vecBrightness)) * (dmat_norm(vecNormal)));
-    if (angle < 0)angle = 0;
-    return angle;
-}
-
-double find_intensity(dmatrix_t *P, dmatrix_t *light)
-{
-    dmatrix_t norm = *(dmat_normalize(P));
-    dmatrix_t center;
-    dmat_alloc(&center, 4, 1);
-
-    center = *dmat_init(&center, 0);
-
-    dmatrix_t source;
-    dmat_alloc(&source, 4, 1);
-    source = *(dmat_sub(&center, light));
-    double angle = ddot_product(&source, &norm) / ((dmat_norm(&source)) * (dmat_norm(&norm)));
-    if (angle < 0)angle = 0;
-    return angle;
-}
-
 void torus(unsigned int r, unsigned int g, unsigned int b)
 {
     //information of torus
@@ -390,8 +370,8 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
     //the range of torus
     double v = 0.0 * M_PI;
     double u = 0.0 * M_PI;
-    double du = 2.0 * M_PI / 12;
-    double dv = 2.0 * M_PI / 100;
+    double du = 2.0 * M_PI / 16;
+    double dv = 2.0 * M_PI / 40;
 
     //points to draw the torus
     dmatrix_t P[3];
@@ -417,9 +397,9 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
     //light
     dmatrix_t pointLight;
     dmat_alloc(&pointLight, 4, 1);
-    pointLight.m[1][1] = 200.0;
-    pointLight.m[2][1] = 200.0;
-    pointLight.m[3][1] = 200.0;
+    pointLight.m[1][1] = -180.0;
+    pointLight.m[2][1] = -180.0;
+    pointLight.m[3][1] = -180.0;
     pointLight.m[4][1] = 1.0;
 
     for (v = 0 * M_PI; v <= 2.0 * M_PI; v += dv)
@@ -490,12 +470,12 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
             //std::cout<<"\nbrightness: "<<brightness<<"\n======="<<std::endl;
 
     //4.draw line part
-            Line(x.m[1][1], x.m[2][1], y.m[1][1], y.m[2][1]);
-            Line(x.m[1][1], x.m[2][1], z.m[1][1], z.m[2][1]);
+            //Line(x.m[1][1], x.m[2][1], y.m[1][1], y.m[2][1]);
+            //Line(x.m[1][1], x.m[2][1], z.m[1][1], z.m[2][1]);
     //5.draw centre to light part(optional)
             pointCenter = *perspective_projection(dmat_mult(&C, &pointCenter));
             vecLight = *perspective_projection(dmat_mult(&C, &pointLight));
-            Line(pointCenter.m[1][1], pointCenter.m[2][1], vecLight.m[1][1], vecLight.m[2][1]);
+            //Line(pointCenter.m[1][1], pointCenter.m[2][1], vecLight.m[1][1], vecLight.m[2][1]);
     //6.fill with color part. Do it twice, one is xyz, one is yzbuffer
             P[0] = x;
             P[1] = y;
@@ -506,10 +486,11 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
         }
     }
     //7.clean
-    for (int i = 0; i < 3; i++)
-    {
-        free_dmatrix(P[i].m, 1, P[i].l, 1, P[i].c);
-    }
+    free_dmatrix(x.m,1,x.l,1,x.c) ;
+    free_dmatrix(y.m,1,y.l,1,y.c) ;
+    free_dmatrix(z.m,1,z.l,1,z.c) ;
+    free_dmatrix(buffer.m,1,buffer.l,1,buffer.c) ;
+    free_dmatrix(pointLight.m,1,pointLight.l,1,pointLight.c) ;
 }
 
 void sphere(unsigned int r, unsigned int g, unsigned int b)
@@ -520,15 +501,15 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
     //range of sphere
     double v = 0.0 * M_PI;
     double u = 0.0 * M_PI;
-    double dv = 2.0 * M_PI / 40.0;
-    double du = M_PI / 16.0;
+    double dv = 2.0 * M_PI / 20;
+    double du = M_PI / 16;
 
     //light
     dmatrix_t pointLight;
     dmat_alloc(&pointLight, 4, 1);
-    pointLight.m[1][1] = 200.0;
-    pointLight.m[2][1] = 200.0;
-    pointLight.m[3][1] = 200.0;
+    pointLight.m[1][1] = -180.0;
+    pointLight.m[2][1] = -180.0;
+    pointLight.m[3][1] = -180.0;
     pointLight.m[4][1] = 1.0;
 
     //points to draw sphere. the buffer here has same idea as in Torus'
@@ -581,7 +562,7 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
 
             dmatrix_t vecNorm;
             dmat_alloc(&vecNorm, 4, 1);
-            vecNorm = *crossProduct(vecYX, vecXZ);
+            vecNorm = *crossProduct(vecXZ, vecYX);
 
             //std::cout<<"yx:"<<std::endl;write_dmatrix(&vecYX);
             //std::cout<<"xz:"<<std::endl;write_dmatrix(&vecXZ);
@@ -613,13 +594,13 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
             z = *perspective_projection(dmat_mult(&C, &z));
             buffer = *perspective_projection(dmat_mult(&C, &buffer));
 
-            Line(x.m[1][1],x.m[2][1],y.m[1][1],y.m[2][1]);
-            Line(x.m[1][1],x.m[2][1],z.m[1][1],z.m[2][1]);
+            //Line(x.m[1][1],x.m[2][1],y.m[1][1],y.m[2][1]);
+            //Line(x.m[1][1],x.m[2][1],z.m[1][1],z.m[2][1]);
 
     //5.draw centre to light part(optional)
             pointCenter = *perspective_projection(dmat_mult(&C, &pointCenter));
             vecLight = *perspective_projection(dmat_mult(&C, &pointLight));
-            Line(pointCenter.m[1][1], pointCenter.m[2][1], vecLight.m[1][1], vecLight.m[2][1]);
+            //Line(pointCenter.m[1][1], pointCenter.m[2][1], vecLight.m[1][1], vecLight.m[2][1]);
 
             P[0] = x;
             P[1] = y;
@@ -630,22 +611,17 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
         }
     }
     //7.clean
-    delete_dmatrix(&x);
-    delete_dmatrix(&y);
-    delete_dmatrix(&z);
-    delete_dmatrix(&buffer);
+    free_dmatrix(x.m,1,x.l,1,x.c) ;
+    free_dmatrix(y.m,1,y.l,1,y.c) ;
+    free_dmatrix(z.m,1,z.l,1,z.c) ;
+    free_dmatrix(buffer.m,1,buffer.l,1,buffer.c) ;
+    free_dmatrix(pointLight.m,1,pointLight.l,1,pointLight.c) ;
 }
 
 void Draw()
 {
-
     torus(200, 0, 0);
     sphere(200, 0, 0);
-//    Torus t;
-//    Sphere s;
-//
-//    t.draw(1, 1, 1, 1);
-//    s.draw(1, 1, 1);
 }
 
 void OnDisplay()

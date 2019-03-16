@@ -1,0 +1,3 @@
+/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/CMakeFiles/Staurn.dir
+/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/CMakeFiles/ALL_BUILD.dir
+/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/CMakeFiles/ZERO_CHECK.dir
