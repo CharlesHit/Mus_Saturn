@@ -20,8 +20,8 @@ const double Gz = 0.0;
 const double G[3] = { Gx, Gy, Gz };
 
 const double UPx = 0.0;
-const double UPy = 1.0;
-const double UPz = 0.0;
+const double UPy = 0.0;
+const double UPz = 1.0;
 
 //const double direction[3] = { UPx,UPy,UPz }; //the direction vector for camera
 

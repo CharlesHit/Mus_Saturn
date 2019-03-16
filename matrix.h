@@ -292,6 +292,20 @@ dmatrix_t *dmat_transpose(dmatrix_t *A)
 }
 
 
+dmatrix_t *dmat_abs(dmatrix_t *A)
+
+{
+    int i, j;
+
+    for (i = 1; i <= (*A).l; i++) {
+        for (j = 1; j <= (*A).c; j++) {
+            if( (*A).m[i][j] < 0)(*A).m[i][j] = - (*A).m[i][j];
+        }
+    }
+    return A;
+}
+
+
 double ddot_product(dmatrix_t *A, dmatrix_t *B)
 
 {

@@ -180,6 +180,65 @@ void rotation(char type, double degree) {
     C = *dmat_mult(&C,&rotation);
 }
 
+dmatrix_t *translation(double x, double y, double z, dmatrix_t D) {
+    //Translation matrix
+    dmatrix_t translation; //translation matrix
+    dmat_alloc(&translation, 4, 4);
+    dmat_identity(&translation);
+    translation.m[1][4] = x;
+    translation.m[2][4] = y;
+    translation.m[3][4] = z;
+    D = *dmat_mult(&D, &translation);
+
+    return &D;
+}
+
+dmatrix_t *scalarization(double x, double y, double z, dmatrix_t D) {
+    //Scalar matrix
+    dmatrix_t scalar;
+    dmat_alloc(&scalar, 4, 4);
+    dmat_identity(&scalar);
+    scalar.m[1][1] = x;
+    scalar.m[2][2] = y;
+    scalar.m[3][3] = z;
+    D = *dmat_mult(&D, &scalar);
+
+    return &D;
+}
+
+dmatrix_t *rotation(char type, double degree, dmatrix_t D) {
+    //Rotation matrix
+    dmatrix_t rotation;
+    dmat_alloc(&rotation, 4, 4);
+    dmat_identity(&rotation);
+
+    if (type == 'z') {
+        rotation.m[1][1] = cos(degree);
+        rotation.m[1][2] = -sin(degree);
+        rotation.m[2][1] = sin(degree);
+        rotation.m[2][2] = cos(degree);
+    }
+
+    else if (type == 'y') {
+        rotation.m[1][1] = cos(degree);
+        rotation.m[3][1] = -sin(degree);
+        rotation.m[1][3] = sin(degree);
+        rotation.m[3][3] = cos(degree);
+    }
+
+    else if (type == 'x') {
+        rotation.m[2][2] = cos(degree);
+        rotation.m[2][3] = -sin(degree);
+        rotation.m[3][2] = sin(degree);
+        rotation.m[3][3] = cos(degree);
+    }
+
+    D = *dmat_mult(&D,&rotation);
+
+    return &D;
+}
+
+
 void cameraInitialization() {
     // Camera matrix
     dmatrix_t e; /* The centre of projection for the camera */
