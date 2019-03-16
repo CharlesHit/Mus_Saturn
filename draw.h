@@ -34,19 +34,19 @@ dmatrix_t *crossProduct(dmatrix_t vect_A, dmatrix_t vect_B)
 
 double angle(dmatrix_t vect_A, dmatrix_t vect_B)
 {
-    dmatrix_t vecLight;
-    dmat_alloc(&vecLight, 3, 1);
-    vecLight.m[1][1] = vect_A.m[1][1];
-    vecLight.m[2][1] = vect_A.m[2][1];
-    vecLight.m[3][1] = vect_A.m[3][1];
+    dmatrix_t vecLight_xyz;
+    dmat_alloc(&vecLight_xyz, 3, 1);
+    vecLight_xyz.m[1][1] = vect_A.m[1][1];
+    vecLight_xyz.m[2][1] = vect_A.m[2][1];
+    vecLight_xyz.m[3][1] = vect_A.m[3][1];
 
-    dmatrix_t vecNorm;
-    dmat_alloc(&vecNorm, 3, 1);
-    vecNorm.m[1][1] = vect_B.m[1][1];
-    vecNorm.m[2][1] = vect_B.m[2][1];
-    vecNorm.m[3][1] = vect_B.m[3][1];
+    dmatrix_t vecNorm_xyz;
+    dmat_alloc(&vecNorm_xyz, 3, 1);
+    vecNorm_xyz.m[1][1] = vect_B.m[1][1];
+    vecNorm_xyz.m[2][1] = vect_B.m[2][1];
+    vecNorm_xyz.m[3][1] = vect_B.m[3][1];
 
-    return ddot_product(&vecLight, &vecNorm) / ((dmat_norm(&vecLight)) * (dmat_norm(&vecNorm)));
+    return ddot_product(&vecLight_xyz, &vecNorm_xyz) / ((dmat_norm(&vecLight_xyz)) * (dmat_norm(&vecNorm_xyz)));
 
 }
 
@@ -432,31 +432,28 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
             dmatrix_t vecXZ;dmat_alloc(&vecXZ, 4, 1);
             vecXZ = *dmat_sub(&z, &x);
 
-            dmatrix_t vecNorm;
-            dmat_alloc(&vecNorm, 4, 1);
-            vecNorm = *crossProduct(vecYX, vecXZ);
+            dmatrix_t vecNorm_xyz;
+            dmat_alloc(&vecNorm_xyz, 4, 1);
+            vecNorm_xyz = *crossProduct(vecYX, vecXZ);
 
             //std::cout<<"yx:"<<std::endl;write_dmatrix(&vecYX);
             //std::cout<<"xz:"<<std::endl;write_dmatrix(&vecXZ);
 
-            dmatrix_t pointCenter;
-            dmat_alloc(&pointCenter,4,1);
-            pointCenter.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1])/3;
-            pointCenter.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1])/3;
-            pointCenter.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1])/3;
-            pointCenter.m[4][1] = 1;
+            dmatrix_t pointCenter_xyz; dmat_alloc(&pointCenter_xyz,4,1); pointCenter_xyz.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1])/3;pointCenter_xyz.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1])/3;pointCenter_xyz.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1])/3;pointCenter_xyz.m[4][1] = 1;
 
-            dmatrix_t vecLight;
-            dmat_alloc(&vecLight, 4, 1);
-            vecLight = *dmat_sub(&pointLight, &pointCenter);
+            dmatrix_t pointCenter_yzb; dmat_alloc(&pointCenter_yzb,4,1); pointCenter_yzb.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1])/3;pointCenter_yzb.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1])/3;pointCenter_yzb.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1])/3;pointCenter_yzb.m[4][1] = 1;
 
-            //std::cout<<"\npointCenter:"<<std::endl; write_dmatrix(&pointCenter);
+            dmatrix_t vecLight_xyz;
+            dmat_alloc(&vecLight_xyz, 4, 1);
+            vecLight_xyz = *dmat_sub(&pointLight, &pointCenter_xyz);
+
+            //std::cout<<"\npointCenter_xyz:"<<std::endl; write_dmatrix(&pointCenter_xyz);
             //std::cout<<"\nsourceLight:"<<std::endl;write_dmatrix(&pointLight);
-            //std::cout<<"\n***vecLight:"<<std::endl;write_dmatrix(&vecLight);
-            //std::cout<<"\n***vecNorm:"<<std::endl; write_dmatrix(&vecNorm);
+            //std::cout<<"\n***vecLight_xyz:"<<std::endl;write_dmatrix(&vecLight_xyz);
+            //std::cout<<"\n***vecNorm_xyz:"<<std::endl; write_dmatrix(&vecNorm_xyz);
 
             //cos of two vector
-            double brightness = angle(vecNorm,vecLight);
+            double brightness = angle(vecNorm_xyz,vecLight_xyz);
             if (brightness < 0)brightness = 0;
 
             //brightness = 1;
@@ -473,9 +470,9 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
             //Line(x.m[1][1], x.m[2][1], y.m[1][1], y.m[2][1]);
             //Line(x.m[1][1], x.m[2][1], z.m[1][1], z.m[2][1]);
     //5.draw centre to light part(optional)
-            pointCenter = *perspective_projection(dmat_mult(&C, &pointCenter));
-            vecLight = *perspective_projection(dmat_mult(&C, &pointLight));
-            //Line(pointCenter.m[1][1], pointCenter.m[2][1], vecLight.m[1][1], vecLight.m[2][1]);
+            pointCenter_xyz = *perspective_projection(dmat_mult(&C, &pointCenter_xyz));
+            vecLight_xyz = *perspective_projection(dmat_mult(&C, &pointLight));
+            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], vecLight_xyz.m[1][1], vecLight_xyz.m[2][1]);
     //6.fill with color part. Do it twice, one is xyz, one is yzbuffer
             P[0] = x;
             P[1] = y;
@@ -501,8 +498,8 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
     //range of sphere
     double v = 0.0 * M_PI;
     double u = 0.0 * M_PI;
-    double dv = 2.0 * M_PI / 20;
-    double du = M_PI / 16;
+    double dv = 2.0 * M_PI / 10;
+    double du = M_PI / 8;
 
     //light
     dmatrix_t pointLight;
@@ -531,9 +528,11 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
 
 
     /* Notice: the sphere's u, that is every slices' euqation, only need run a half */
-    for (v = 0.0; v <= 2 * M_PI; v += dv)
+    double delta = 1;
+    double start = 1;
+    for (v = (start) * M_PI; v+dv <= (delta+start) * M_PI; v += dv)
     {
-        for (u = 0.0; u <= M_PI; u += du)
+        for (u = 0.0; u+du <= M_PI; u += du)
         {
             x.m[1][1] = radiumphere * cos(v) * sin(u);
             x.m[2][1] = radiumphere * sin(v) * sin(u);
@@ -552,40 +551,40 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
             buffer.m[3][1] = radiumphere * cos(u + du);
             buffer.m[4][1] = 1;
 
-            //2.light and calculation of brightness;
-            //printf("x\n");write_dmatrix(&x); printf("y\n");write_dmatrix(&y); printf("z\n");write_dmatrix(&z);
-            dmatrix_t vecYX;dmat_alloc(&vecYX, 4, 1);
-            vecYX = *dmat_sub(&y, &x);
+    //2.light and calculation of brightness;
+            //calcuate vectors based on surface x-y-z-buffer
+            dmatrix_t vecYX;dmat_alloc(&vecYX, 4, 1);vecYX = *dmat_sub(&x, &y);//x-y
+            dmatrix_t vecXZ;dmat_alloc(&vecXZ, 4, 1);vecXZ = *dmat_sub(&z, &x);
+            dmatrix_t vecYZ;dmat_alloc(&vecYZ, 4, 1);vecYZ = *dmat_sub(&z, &y);
+            dmatrix_t vecZbuffer;dmat_alloc(&vecZbuffer, 4, 1);vecZbuffer = *dmat_sub(&buffer, &z);
 
-            dmatrix_t vecXZ;dmat_alloc(&vecXZ, 4, 1);
-            vecXZ = *dmat_sub(&z, &x);
+            //calcuate two vectors: xyz, yzbuffer
+            dmatrix_t vecNorm_xyz; dmat_alloc(&vecNorm_xyz, 4, 1);vecNorm_xyz = *crossProduct(vecXZ, vecYX);
+            vecNorm_xyz = *dmat_normalize(&vecNorm_xyz);vecNorm_xyz = *dmat_scalar_mult(&vecNorm_xyz, 100); //normailize it and times 10 could make it looks clear when visualize normalvector.
 
-            dmatrix_t vecNorm;
-            dmat_alloc(&vecNorm, 4, 1);
-            vecNorm = *crossProduct(vecXZ, vecYX);
+            dmatrix_t vecNorm_yzb; dmat_alloc(&vecNorm_yzb, 4, 1);vecNorm_yzb = *crossProduct(vecZbuffer, vecYZ);
+            vecNorm_yzb = *dmat_normalize(&vecNorm_yzb);vecNorm_yzb = *dmat_scalar_mult(&vecNorm_yzb, 100); //normailize it and times 10 could make it looks clear when visualize normalvector.
 
             //std::cout<<"yx:"<<std::endl;write_dmatrix(&vecYX);
             //std::cout<<"xz:"<<std::endl;write_dmatrix(&vecXZ);
 
-            dmatrix_t pointCenter;
-            dmat_alloc(&pointCenter,4,1);
-            pointCenter.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1])/3;
-            pointCenter.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1])/3;
-            pointCenter.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1])/3;
-            pointCenter.m[4][1] = 1;
+            //calcuate center of xyz, yzb
+            dmatrix_t pointCenter_xyz;dmat_alloc(&pointCenter_xyz,4,1);pointCenter_xyz.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1])/3;pointCenter_xyz.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1])/3;pointCenter_xyz.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1])/3;pointCenter_xyz.m[4][1] = 1;
 
-            dmatrix_t vecLight;
-            dmat_alloc(&vecLight, 4, 1);
-            vecLight = *dmat_sub(&pointLight, &pointCenter);
+            dmatrix_t pointCenter_yzb;dmat_alloc(&pointCenter_yzb,4,1);pointCenter_yzb.m[1][1] = (z.m[1][1] + y.m[1][1] + buffer.m[1][1])/3;pointCenter_yzb.m[2][1] = (z.m[2][1] + y.m[2][1] + buffer.m[2][1])/3;pointCenter_yzb.m[3][1] = (z.m[3][1] + y.m[3][1] + buffer.m[3][1])/3;pointCenter_yzb.m[4][1] = 1;
 
-            //std::cout<<"\npointCenter:"<<std::endl; write_dmatrix(&pointCenter);
+            //calculate two light vector
+            dmatrix_t vecLight_xyz;dmat_alloc(&vecLight_xyz, 4, 1);vecLight_xyz = *dmat_sub(&pointLight, &pointCenter_xyz);
+            dmatrix_t vecLight_yzb;dmat_alloc(&vecLight_yzb, 4, 1);vecLight_yzb = *dmat_sub(&pointLight, &pointCenter_yzb);
+
+            //std::cout<<"\npointCenter_xyz:"<<std::endl; write_dmatrix(&pointCenter_xyz);
             //std::cout<<"\nsourceLight:"<<std::endl;write_dmatrix(&pointLight);
-            //std::cout<<"\n***vecLight:"<<std::endl;write_dmatrix(&vecLight);
-            //std::cout<<"\n***vecNorm:"<<std::endl; write_dmatrix(&vecNorm);
+            //std::cout<<"\n***vecLight_xyz:"<<std::endl;write_dmatrix(&vecLight_xyz);
+            //std::cout<<"\n***vecNorm_xyz:"<<std::endl; write_dmatrix(&vecNorm_xyz);
 
-            //cos of two vector
-            double brightness = angle(vecNorm,vecLight);
-            if (brightness < 0)brightness = 0;
+            //calculate cos of two vector X light
+            double brightness_xyz = angle(vecNorm_xyz,vecLight_xyz);if (brightness_xyz < 0)brightness_xyz = 0;
+            double brightness_yzb = angle(vecNorm_yzb,vecLight_yzb);if (brightness_yzb < 0)brightness_yzb = 0;
 
             //std::cout<<"\nbrightness: "<<brightness<<"\n======="<<std::endl;
 
@@ -594,20 +593,34 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
             z = *perspective_projection(dmat_mult(&C, &z));
             buffer = *perspective_projection(dmat_mult(&C, &buffer));
 
-            //Line(x.m[1][1],x.m[2][1],y.m[1][1],y.m[2][1]);
-            //Line(x.m[1][1],x.m[2][1],z.m[1][1],z.m[2][1]);
+            Line(x.m[1][1],x.m[2][1],y.m[1][1],y.m[2][1]);
+            Line(x.m[1][1],x.m[2][1],z.m[1][1],z.m[2][1]);
+            Line(y.m[1][1],y.m[2][1],z.m[1][1],z.m[2][1]);
 
-    //5.draw centre to light part(optional)
-            pointCenter = *perspective_projection(dmat_mult(&C, &pointCenter));
-            vecLight = *perspective_projection(dmat_mult(&C, &pointLight));
-            //Line(pointCenter.m[1][1], pointCenter.m[2][1], vecLight.m[1][1], vecLight.m[2][1]);
+    //5.draw centre to light part and normal vector(optional)
+            //xyz
+            dmatrix_t pointNormEnd_xyz; dmat_alloc(&pointNormEnd_xyz, 4, 1);pointNormEnd_xyz = *dmat_add(&pointCenter_xyz, &vecNorm_xyz);//pointNormEnd_xyz = pointCenter_xyz+Normalvector
+            pointNormEnd_xyz = *perspective_projection(dmat_mult(&C, &pointNormEnd_xyz));
+            pointCenter_xyz = *perspective_projection(dmat_mult(&C, &pointCenter_xyz));
+            vecLight_xyz = *perspective_projection(dmat_mult(&C, &pointLight));
+            //light to point, and normal vector
+            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], vecLight_xyz.m[1][1], vecLight_xyz.m[2][1]);
+            Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], pointNormEnd_xyz.m[1][1], pointNormEnd_xyz.m[2][1]);
 
-            P[0] = x;
-            P[1] = y;
-            P[2] = z;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness, g * brightness, b * brightness);
+            //yzb
+            dmatrix_t pointNormEnd_yzb; dmat_alloc(&pointNormEnd_yzb, 4, 1);pointNormEnd_yzb = *dmat_add(&pointCenter_yzb, &vecNorm_yzb);//pointNormEnd_yzb = pointCenter_xyz+Normalvector
+            pointNormEnd_yzb = *perspective_projection(dmat_mult(&C, &pointNormEnd_yzb));
+            pointCenter_yzb = *perspective_projection(dmat_mult(&C, &pointCenter_yzb));
+            vecLight_yzb = *perspective_projection(dmat_mult(&C, &pointLight));
+            //light to point, and normal vector
+            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], vecLight_xyz.m[1][1], vecLight_xyz.m[2][1]);
+            Line(pointCenter_yzb.m[1][1], pointCenter_yzb.m[2][1], pointNormEnd_yzb.m[1][1], pointNormEnd_yzb.m[2][1]);
+
+            //fill with color
+            P[0] = x;P[1] = y;P[2] = z;
+//            XFillConvexPolygon(d, w, s, P, 3, r * brightness_xyz, g * brightness_xyz, b * brightness_xyz);
             P[0] = buffer;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness, g * brightness, b * brightness);
+//            XFillConvexPolygon(d, w, s, P, 3, r * brightness_yzb, g * brightness_yzb, b * brightness_yzb);
         }
     }
     //7.clean
@@ -620,7 +633,7 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
 
 void Draw()
 {
-    torus(200, 0, 0);
+    //torus(200, 0, 0);
     sphere(200, 0, 0);
 }
 
