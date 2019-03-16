@@ -6,4 +6,9 @@ CMakeFiles/Staurn.dir/render.cpp.o: ../data.h
 CMakeFiles/Staurn.dir/render.cpp.o: ../draw.h
 CMakeFiles/Staurn.dir/render.cpp.o: ../matrix.h
 CMakeFiles/Staurn.dir/render.cpp.o: ../render.cpp
+CMakeFiles/Staurn.dir/render.cpp.o: /usr/X11R6/include/X11/X.h
+CMakeFiles/Staurn.dir/render.cpp.o: /usr/X11R6/include/X11/Xfuncproto.h
+CMakeFiles/Staurn.dir/render.cpp.o: /usr/X11R6/include/X11/Xlib.h
+CMakeFiles/Staurn.dir/render.cpp.o: /usr/X11R6/include/X11/Xmd.h
+CMakeFiles/Staurn.dir/render.cpp.o: /usr/X11R6/include/X11/Xosdefs.h
 

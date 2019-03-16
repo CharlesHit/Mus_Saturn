@@ -1,7 +1,4 @@
 #include <iostream>
-#include <OpenGL/gl.h>
-#include <OpenGl/glu.h>
-#include <GLUT/glut.h>
 #include "draw.h"
 
 void idle()
@@ -13,8 +10,14 @@ void idle()
     OnDisplay();
 }
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
+    Display *d;
+    Window w;
+    XEvent e;
+    int s;
+    int r, g, b;
+
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(windowW, windowH);
@@ -29,8 +32,8 @@ int main(int argc, char** argv)
 
     scalarization(1.1, 1.1, 1.1);
 
-    rotation('y', M_PI / 2);
-    rotation('x', M_PI / 12);
+    rotation('y', 3* M_PI / 12);
+    rotation('x', 3*M_PI  / 12);
 
     //-- run the program
     glutDisplayFunc(OnDisplay);

@@ -7,9 +7,9 @@ const double ASPECT = (double)windowW / (double)windowH;
 const double THETA = 90.0;
 
 //the camera's eye and gaze points.
-const double Ex = 160;
-const double Ey = 160;
-const double Ez = 160;
+const double Ex = 180;
+const double Ey = 180;
+const double Ez = 180;
 
 const double E[3] = { Ex, Ey, Ez };
 

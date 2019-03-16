@@ -33,6 +33,8 @@ void write_dmatrix(dmatrix_t *M)
 {
 	int i, j;
 
+	//printf("row:%d; column:%d\n",M->l,M->c);
+
 	for (i = 1; i <= (*M).l; i++) {
 		for (j = 1; j <= (*M).c; j++) {
 			printf("%7.4f ", (*M).m[i][j]);
@@ -313,7 +315,7 @@ double ddot_product(dmatrix_t *A, dmatrix_t *B)
 	else if ((*A).l == (*B).l && (*A).c == 1 && (*B).c == 1) {
 		C = dmat_mult(dmat_transpose(A), B);
 	}
-	else error("MATRIX.H: Incompatible matrix sizes");
+	else error("MATRIX.H.dot: Incompatible matrix sizes");
 	return (*C).m[1][1];
 }
 
@@ -342,7 +344,6 @@ dmatrix_t *cross_product_matrix(dmatrix_t *A, dmatrix_t *B)
 	}
 	return C;
 }
-
 
 dmatrix_t *sub_matrix(dmatrix_t *A, int r, int c)
 

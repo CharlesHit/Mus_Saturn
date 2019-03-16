@@ -21,6 +21,14 @@ matrix.h
 /Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/data.h
 
 /Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/draw.h
+X11/Xlib.h
+-
+OpenGL/gl.h
+-
+OpenGl/glu.h
+-
+GLUT/glut.h
+-
 string.h
 -
 camera.h
@@ -37,12 +45,34 @@ math.h
 /Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/render.cpp
 iostream
 -
-OpenGL/gl.h
--
-OpenGl/glu.h
--
-GLUT/glut.h
--
 draw.h
 /Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/draw.h
+
+/usr/X11R6/include/X11/X.h
+X11/Xmd.h
+-
+
+/usr/X11R6/include/X11/Xfuncproto.h
+
+/usr/X11R6/include/X11/Xlib.h
+sys/types.h
+-
+stdint.h
+-
+X11/X.h
+-
+X11/Xfuncproto.h
+-
+X11/Xosdefs.h
+-
+stddef.h
+-
+stdlib.h
+-
+
+/usr/X11R6/include/X11/Xmd.h
+sys/isa_defs.h
+-
+
+/usr/X11R6/include/X11/Xosdefs.h
 
