@@ -13,12 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3cc7f0c5-5f12-462d-b956-17d9a4b50bb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/Staurn" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/Staurn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal/x86_64/render.dia" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal/x86_64/render.dia" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/project.xcworkspace/xcuserdata/Charles.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.xcodeproj/project.xcworkspace/xcuserdata/Charles.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/xcuserdata/Charles.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.xcodeproj/xcuserdata/Charles.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/camera.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Staurn" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Staurn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.h" beforeDir="false" afterPath="$PROJECT_DIR$/data.h" afterDir="false" />
@@ -28,6 +23,7 @@
     </list>
     <ignored path="$PROJECT_DIR$/Saturn_ver2.0.xcodeproj/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,19 +48,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+        <entry file="file://$PROJECT_DIR$/data.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+            <state relative-caret-position="45">
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data.h">
+        <entry file="file://$PROJECT_DIR$/draw.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state relative-caret-position="752">
+              <caret line="791" column="19" selection-start-line="791" selection-start-column="19" selection-end-line="791" selection-end-column="19" />
+              <folding>
+                <element signature="e#356#781#0" />
+                <element signature="e#783#1333#0" />
+                <element signature="e#1335#1535#0" />
+                <element signature="e#1537#1923#0" />
+                <element signature="e#1925#6432#0" />
+                <element signature="e#2265#2675#0" />
+                <element signature="e#4635#4900#0" />
+                <element signature="e#6434#6663#0" />
+                <element signature="e#6434#6862#0" />
+                <element signature="e#6864#7324#0" />
+                <element signature="e#7326#7614#0" />
+                <element signature="e#7616#7904#0" />
+                <element signature="e#7906#8156#0" />
+                <element signature="e#8158#8408#0" />
+                <element signature="e#8410#10820#0" />
+                <element signature="e#10822#19820#0" />
+                <element signature="e#18947#27468#0" />
+                <element signature="e#37178#37180#0" />
+                <element signature="e#62580#62613#0" />
+                <element signature="e#62503#63467#0" />
+                <element signature="e#63469#64432#0" />
+                <element signature="e#64434#64668#0" />
+                <element signature="e#64670#64904#0" />
+                <element signature="e#64906#65160#0" />
+                <element signature="e#65162#66133#0" />
+                <element signature="e#66135#66278#0" />
+                <element signature="e#68779#69792#0" />
+                <element signature="e#66485#66836#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +98,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/render.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state relative-caret-position="480">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -82,89 +108,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeCache.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake_install.cmake">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/draw.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="1251" column="27" selection-start-line="1251" selection-start-column="27" selection-end-line="1251" selection-end-column="27" />
-              <folding>
-                <element signature="e#328#753#0" />
-                <element signature="e#755#1306#0" />
-                <element signature="e#1308#1507#0" />
-                <element signature="e#1509#1787#0" />
-                <element signature="e#1789#6099#0" />
-                <element signature="e#2357#2767#0" />
-                <element signature="e#4494#4759#0" />
-                <element signature="e#6101#6330#0" />
-                <element signature="e#6101#6452#0" />
-                <element signature="e#6454#6742#0" />
-                <element signature="e#6744#7032#0" />
-                <element signature="e#7034#7284#0" />
-                <element signature="e#7286#7536#0" />
-                <element signature="e#7538#9917#0" />
-                <element signature="e#9919#18031#0" />
-                <element signature="e#18034#25805#0" />
-                <element signature="e#25806#33577#0" />
-                <element signature="e#41603#49596#0" />
-                <element signature="e#41603#47582#0" />
-                <element signature="e#20558#20838#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matrix.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4695">
-              <caret line="327" column="28" selection-start-line="327" selection-start-column="28" selection-end-line="327" selection-end-column="28" />
+            <state relative-caret-position="354">
+              <caret line="188" selection-start-line="188" selection-end-line="188" />
               <folding>
                 <element signature="e#0#104#0" />
                 <element signature="e#224#258#0" />
                 <element signature="e#292#443#0" />
-                <element signature="e#445#619#0" />
-                <element signature="e#622#1029#0" />
-                <element signature="e#1032#1202#0" />
-                <element signature="e#1205#1295#0" />
-                <element signature="e#1298#1403#0" />
-                <element signature="e#1406#1671#0" />
-                <element signature="e#1674#1841#0" />
-                <element signature="e#1843#2056#0" />
-                <element signature="e#2058#2283#0" />
-                <element signature="e#2286#2568#0" />
-                <element signature="e#2571#3012#0" />
-                <element signature="e#3015#3400#0" />
-                <element signature="e#3403#3802#0" />
-                <element signature="e#3805#4185#0" />
-                <element signature="e#4188#4281#0" />
-                <element signature="e#4284#4550#0" />
-                <element signature="e#5115#5523#0" />
-                <element signature="e#5526#6022#0" />
-                <element signature="e#6025#6446#0" />
-                <element signature="e#6449#6746#0" />
-                <element signature="e#6749#6868#0" />
-                <element signature="e#6871#7288#0" />
-                <element signature="e#7291#8031#0" />
-                <element signature="e#8034#8659#0" />
+                <element signature="e#445#664#0" />
+                <element signature="e#1076#1267#0" />
+                <element signature="e#1270#1359#0" />
+                <element signature="e#1469#1734#0" />
+                <element signature="e#1737#1904#0" />
+                <element signature="e#1906#2119#0" />
+                <element signature="e#2121#2346#0" />
+                <element signature="e#2349#2631#0" />
+                <element signature="e#3078#3463#0" />
+                <element signature="e#3466#3865#0" />
+                <element signature="e#4251#4344#0" />
+                <element signature="e#4347#4613#0" />
+                <element signature="e#4616#4839#0" />
+                <element signature="e#4842#5405#0" />
+                <element signature="e#5408#5816#0" />
+                <element signature="e#5818#6314#0" />
+                <element signature="e#6317#6738#0" />
+                <element signature="e#6741#7038#0" />
+                <element signature="e#7041#7160#0" />
+                <element signature="e#7163#7580#0" />
+                <element signature="e#7583#8323#0" />
+                <element signature="e#8326#8951#0" />
               </folding>
             </state>
           </provider>
@@ -173,16 +146,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/camera.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1033">
-              <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
+            <state relative-caret-position="2190">
+              <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
               <folding>
-                <element signature="e#122#2524#0" />
-                <element signature="e#2526#2714#0" />
-                <element signature="e#2716#3033#0" />
-                <element signature="e#4067#4554#0" />
+                <element signature="e#13#35#0" expanded="true" />
+                <element signature="e#143#2545#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -202,11 +178,20 @@
       <find>sub</find>
       <find>600</find>
       <find>build_dmat</find>
-      <find>de</find>
       <find>®</find>
       <find>r</find>
       <find>C</find>
+      <find>frame</find>
+      <find>DrawPixel</find>
+      <find>Line</find>
+      <find>intDepth</find>
+      <find>norm</find>
+      <find>true</find>
+      <find>de</find>
     </findStrings>
+    <replaceStrings>
+      <replace>floatDepth</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -220,14 +205,14 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/matrix.h" />
         <option value="$PROJECT_DIR$/camera.h" />
-        <option value="$PROJECT_DIR$/data.h" />
         <option value="$PROJECT_DIR$/draw.h" />
+        <option value="$PROJECT_DIR$/data.h" />
         <option value="$PROJECT_DIR$/render.cpp" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="70" />
     <option name="y" value="810" />
     <option name="width" value="1080" />
@@ -257,7 +242,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -306,17 +291,18 @@
       <workItem from="1552675568653" duration="5998000" />
       <workItem from="1552682523832" duration="22180000" />
       <workItem from="1552712326191" duration="11099000" />
+      <workItem from="1552799826265" duration="30178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49690000" />
+    <option name="totallyTimeSpent" value="79868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1080" height="1920" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20423892" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.028901733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -331,19 +317,19 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32930845" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.38594595" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3837838" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32947975" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19653179" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.028901733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32930845" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42432433" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -352,12 +338,12 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.32972974" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.32930845" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3854054" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32947975" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,8 +354,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/draw.h</url>
-          <line>364</line>
-          <option name="timeStamp" value="1" />
+          <line>1285</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -413,107 +399,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4695">
-          <caret line="327" column="28" selection-start-line="327" selection-start-column="28" selection-end-line="327" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#104#0" />
-            <element signature="e#224#258#0" />
-            <element signature="e#292#443#0" />
-            <element signature="e#445#619#0" />
-            <element signature="e#622#1029#0" />
-            <element signature="e#1032#1202#0" />
-            <element signature="e#1205#1295#0" />
-            <element signature="e#1298#1403#0" />
-            <element signature="e#1406#1671#0" />
-            <element signature="e#1674#1841#0" />
-            <element signature="e#1843#2056#0" />
-            <element signature="e#2058#2283#0" />
-            <element signature="e#2286#2568#0" />
-            <element signature="e#2571#3012#0" />
-            <element signature="e#3015#3400#0" />
-            <element signature="e#3403#3802#0" />
-            <element signature="e#3805#4185#0" />
-            <element signature="e#4188#4281#0" />
-            <element signature="e#4284#4550#0" />
-            <element signature="e#5115#5523#0" />
-            <element signature="e#5526#6022#0" />
-            <element signature="e#6025#6446#0" />
-            <element signature="e#6449#6746#0" />
-            <element signature="e#6749#6868#0" />
-            <element signature="e#6871#7288#0" />
-            <element signature="e#7291#8031#0" />
-            <element signature="e#8034#8659#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake_install.cmake">
+    <entry file="file://$PROJECT_DIR$/CMakeCache.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/cmake_install.cmake">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeCache.txt">
+    <entry file="file://$PROJECT_DIR$/matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+          <folding>
+            <element signature="e#0#104#0" />
+            <element signature="e#224#258#0" />
+            <element signature="e#292#443#0" />
+            <element signature="e#445#664#0" />
+            <element signature="e#1076#1267#0" />
+            <element signature="e#1270#1359#0" />
+            <element signature="e#1469#1734#0" />
+            <element signature="e#1737#1904#0" />
+            <element signature="e#1906#2119#0" />
+            <element signature="e#2121#2346#0" />
+            <element signature="e#2349#2631#0" />
+            <element signature="e#3078#3463#0" />
+            <element signature="e#3466#3865#0" />
+            <element signature="e#4251#4344#0" />
+            <element signature="e#4347#4613#0" />
+            <element signature="e#4616#4839#0" />
+            <element signature="e#4842#5405#0" />
+            <element signature="e#5408#5816#0" />
+            <element signature="e#5818#6314#0" />
+            <element signature="e#6317#6738#0" />
+            <element signature="e#6741#7038#0" />
+            <element signature="e#7041#7160#0" />
+            <element signature="e#7163#7580#0" />
+            <element signature="e#7583#8323#0" />
+            <element signature="e#8326#8951#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
+          <folding>
+            <element signature="e#13#35#0" expanded="true" />
+            <element signature="e#143#2545#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="45">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/draw.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="1251" column="27" selection-start-line="1251" selection-start-column="27" selection-end-line="1251" selection-end-column="27" />
+        <state relative-caret-position="752">
+          <caret line="791" column="19" selection-start-line="791" selection-start-column="19" selection-end-line="791" selection-end-column="19" />
           <folding>
-            <element signature="e#328#753#0" />
-            <element signature="e#755#1306#0" />
-            <element signature="e#1308#1507#0" />
-            <element signature="e#1509#1787#0" />
-            <element signature="e#1789#6099#0" />
-            <element signature="e#2357#2767#0" />
-            <element signature="e#4494#4759#0" />
-            <element signature="e#6101#6330#0" />
-            <element signature="e#6101#6452#0" />
-            <element signature="e#6454#6742#0" />
-            <element signature="e#6744#7032#0" />
-            <element signature="e#7034#7284#0" />
-            <element signature="e#7286#7536#0" />
-            <element signature="e#7538#9917#0" />
-            <element signature="e#9919#18031#0" />
-            <element signature="e#18034#25805#0" />
-            <element signature="e#25806#33577#0" />
-            <element signature="e#41603#49596#0" />
-            <element signature="e#41603#47582#0" />
-            <element signature="e#20558#20838#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/camera.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1033">
-          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-          <folding>
-            <element signature="e#122#2524#0" />
-            <element signature="e#2526#2714#0" />
-            <element signature="e#2716#3033#0" />
-            <element signature="e#4067#4554#0" />
+            <element signature="e#356#781#0" />
+            <element signature="e#783#1333#0" />
+            <element signature="e#1335#1535#0" />
+            <element signature="e#1537#1923#0" />
+            <element signature="e#1925#6432#0" />
+            <element signature="e#2265#2675#0" />
+            <element signature="e#4635#4900#0" />
+            <element signature="e#6434#6663#0" />
+            <element signature="e#6434#6862#0" />
+            <element signature="e#6864#7324#0" />
+            <element signature="e#7326#7614#0" />
+            <element signature="e#7616#7904#0" />
+            <element signature="e#7906#8156#0" />
+            <element signature="e#8158#8408#0" />
+            <element signature="e#8410#10820#0" />
+            <element signature="e#10822#19820#0" />
+            <element signature="e#18947#27468#0" />
+            <element signature="e#37178#37180#0" />
+            <element signature="e#62580#62613#0" />
+            <element signature="e#62503#63467#0" />
+            <element signature="e#63469#64432#0" />
+            <element signature="e#64434#64668#0" />
+            <element signature="e#64670#64904#0" />
+            <element signature="e#64906#65160#0" />
+            <element signature="e#65162#66133#0" />
+            <element signature="e#66135#66278#0" />
+            <element signature="e#68779#69792#0" />
+            <element signature="e#66485#66836#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/render.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

@@ -1,13 +1,14 @@
 #include <iostream>
 #include "draw.h"
 
+const double rate = 0.02;
+
 void idle()
 {
-    rotation('x', 0.5);
-    rotation('y', 0.5);
-    rotation('z', 0.5);
-    angle_total += 0.5;
-    //scalarization(0.01, 0.01, 0.01);
+    rotation('x', +rate);
+    rotation('y', -rate);
+    rotation('z', +rate);
+    angle_total += rate;
     OnDisplay();
 }
 
@@ -25,15 +26,14 @@ int main(int argc, char **argv)
 
     cameraInitialization();
 
-    scalarization(1, 1, 1);
-    rotation('x', (2 * M_PI / 12));
-    rotation('y', (1 * M_PI / 12));
-    rotation('z', (7 * M_PI / 12));
+//    scalarization(1, 1, 1);
+    rotation('x', (10  * M_PI) / 24);
+    rotation('y', (21 * M_PI) / 24);
+    rotation('z', (13 * M_PI) / 24);
 
-    //-- run the program
     glutDisplayFunc(OnDisplay);
     glutKeyboardFunc(OnKeyboard);
-    //glutIdleFunc(idle);
+    glutIdleFunc(idle);
     glutMainLoop();
     delete_dmatrix(&C);
     return 0;

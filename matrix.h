@@ -240,6 +240,24 @@ dmatrix_t *dmat_sub(dmatrix_t *A, dmatrix_t *B)
 	return C;
 }
 
+bool dmat_compare(dmatrix_t *A, dmatrix_t *B)
+
+{
+    //double s ;
+    int i, j;
+
+    if ((*A).l != (*B).l || (*A).c != (*B).c) {
+        error("MATRIX.H_compare: incompatible matrix sizes");
+    }
+
+    for (i = 1; i <= (*A).l; i++) {
+        for (j = 1; j <= (*A).c; j++) {
+            if((*A).m[i][j] - (*B).m[i][j] < 0.00001) return false;
+        }
+    }
+    return true;
+}
+
 
 double dmat_norm(dmatrix_t *A)
 

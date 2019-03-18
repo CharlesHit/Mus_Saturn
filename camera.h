@@ -5,6 +5,8 @@
 #include "data.h"
 #include "matrix.h"
 
+dmatrix_t pointEye;
+
 dmatrix_t *build_camera_matrix(dmatrix_t *E, dmatrix_t *G)
 {
 
@@ -137,6 +139,8 @@ void translation(double x, double y, double z) {
     translation.m[2][4] = y;
     translation.m[3][4] = z;
     C = *dmat_mult(&C, &translation);
+
+    pointEye = *dmat_mult(&translation, &pointEye);
 }
 
 void scalarization(double x, double y, double z) {
@@ -177,7 +181,10 @@ void rotation(char type, double degree) {
         rotation.m[3][3] = cos(degree);
     }
 
+    pointEye = *dmat_mult(dmat_inverse(&rotation), &pointEye);//MAGIC CODE
+
     C = *dmat_mult(&C,&rotation);
+
 }
 
 dmatrix_t *translation(double x, double y, double z, dmatrix_t D) {
@@ -241,12 +248,12 @@ dmatrix_t *rotation(char type, double degree, dmatrix_t D) {
 
 void cameraInitialization() {
     // Camera matrix
-    dmatrix_t e; /* The centre of projection for the camera */
-    dmat_alloc(&e, 4, 1);
-    e.m[1][1] = Ex;
-    e.m[2][1] = Ey;
-    e.m[3][1] = Ez;
-    e.m[4][1] = 1.0;
+    //dmatrix_t e; /* The centre of projection for the camera */
+    dmat_alloc(&pointEye, 4, 1);
+    pointEye.m[1][1] = Ex;
+    pointEye.m[2][1] = Ey;
+    pointEye.m[3][1] = Ez;
+    pointEye.m[4][1] = 1.0;
 
     dmatrix_t g; /* Point gazed at by camera */
     dmat_alloc(&g, 4, 1);
@@ -257,5 +264,5 @@ void cameraInitialization() {
 
     //dmatrix_t C ; /* The camera matrix */
     dmat_alloc(&C, 4, 4);
-    C = *build_camera_matrix(&e, &g);
+    C = *build_camera_matrix(&pointEye, &g);
 }
