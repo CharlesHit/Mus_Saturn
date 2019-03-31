@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="Staurn" targetName="Staurn" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -13,12 +11,114 @@
   <component name="ChangeListManager">
     <list default="true" id="3cc7f0c5-5f12-462d-b956-17d9a4b50bb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/camera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Staurn" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Staurn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.h" beforeDir="false" afterPath="$PROJECT_DIR$/data.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/CompilerIdC" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/CompilerIdC" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC.LinkFileList" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC.LinkFileList" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC_dependency_info.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/x86_64/CompilerIdC_dependency_info.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/XCBuildData/BuildDescriptionCacheIndex-c015f52ce25bc533e99c49f9f03ffcd3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/XCBuildData/build.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/XCBuildData/c37516c65f2ac9b4905ba3a7a9c3b80a-desc.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdC/XCBuildData/c37516c65f2ac9b4905ba3a7a9c3b80a-manifest.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/CompilerIdCXX" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/CompilerIdCXX" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CompilerIdCXX.LinkFileList" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CompilerIdCXX.LinkFileList" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CompilerIdCXX_dependency_info.dat" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/x86_64/CompilerIdCXX_dependency_info.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/XCBuildData/BuildDescriptionCacheIndex-a7dbf659afc9d41fb0dcca4168c9f347" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/XCBuildData/build.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/XCBuildData/f2d65424e9ce31182ae951810e8bcfcd-desc.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.13.4/CompilerIdCXX/XCBuildData/f2d65424e9ce31182ae951810e8bcfcd-manifest.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeDebug" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeDebug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeMinSizeRel" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeMinSizeRel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelWithDebInfo" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelWithDebInfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelease" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelease" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ReRunCMake.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ReRunCMake.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/XCODE_DEPEND_HELPER.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/XCODE_DEPEND_HELPER.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeDebug" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeDebug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeMinSizeRel" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeMinSizeRel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelWithDebInfo" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelWithDebInfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelease" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelease" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/Staurn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ALL_BUILD.build/Script-E0AEF031CADE4973A8A2F0A5.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ALL_BUILD.build/dgph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal-asan-ubsan/x86_64/Staurn.LinkFileList" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal-asan-ubsan/x86_64/Staurn_dependency_info.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal-asan-ubsan/x86_64/render.dia" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal/x86_64/Staurn.LinkFileList" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal/x86_64/Staurn.LinkFileList" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal/x86_64/Staurn_dependency_info.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/Objects-normal/x86_64/render.dia" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/StaticAnalyzer/Staurn/Staurn/normal/x86_64/render.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph 9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph~ 2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/Staurn.build/dgph~ 3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/Script-7FC7983E363C4AD59CFDCA3F.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph 2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph 3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph 4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph~ 2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph~ 3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph~ 4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph~ 5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.build/Debug/ZERO_CHECK.build/dgph~ 6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/project.xcworkspace/xcuserdata/Charles.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.xcodeproj/project.xcworkspace/xcuserdata/Charles.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/project.xcworkspace/xcuserdata/Charles.xcuserdatad/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/xcshareddata/xcschemes/ALL_BUILD.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/xcuserdata/Charles.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Staurn.xcodeproj/xcuserdata/Charles.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Staurn.xcodeproj/xcuserdata/Charles.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Staurn.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Staurn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Staurn.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Staurn.dSYM/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Staurn.dSYM/Contents/Resources/DWARF/Staurn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/draw.h" beforeDir="false" afterPath="$PROJECT_DIR$/draw.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/render.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/render.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Saturn_ver2.0.xcodeproj/cmake-build-debug/" />
@@ -44,124 +144,8 @@
     <expand />
     <select />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/draw.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="791" column="19" selection-start-line="791" selection-start-column="19" selection-end-line="791" selection-end-column="19" />
-              <folding>
-                <element signature="e#356#781#0" />
-                <element signature="e#783#1333#0" />
-                <element signature="e#1335#1535#0" />
-                <element signature="e#1537#1923#0" />
-                <element signature="e#1925#6432#0" />
-                <element signature="e#2265#2675#0" />
-                <element signature="e#4635#4900#0" />
-                <element signature="e#6434#6663#0" />
-                <element signature="e#6434#6862#0" />
-                <element signature="e#6864#7324#0" />
-                <element signature="e#7326#7614#0" />
-                <element signature="e#7616#7904#0" />
-                <element signature="e#7906#8156#0" />
-                <element signature="e#8158#8408#0" />
-                <element signature="e#8410#10820#0" />
-                <element signature="e#10822#19820#0" />
-                <element signature="e#18947#27468#0" />
-                <element signature="e#37178#37180#0" />
-                <element signature="e#62580#62613#0" />
-                <element signature="e#62503#63467#0" />
-                <element signature="e#63469#64432#0" />
-                <element signature="e#64434#64668#0" />
-                <element signature="e#64670#64904#0" />
-                <element signature="e#64906#65160#0" />
-                <element signature="e#65162#66133#0" />
-                <element signature="e#66135#66278#0" />
-                <element signature="e#68779#69792#0" />
-                <element signature="e#66485#66836#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/render.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matrix.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="188" selection-start-line="188" selection-end-line="188" />
-              <folding>
-                <element signature="e#0#104#0" />
-                <element signature="e#224#258#0" />
-                <element signature="e#292#443#0" />
-                <element signature="e#445#664#0" />
-                <element signature="e#1076#1267#0" />
-                <element signature="e#1270#1359#0" />
-                <element signature="e#1469#1734#0" />
-                <element signature="e#1737#1904#0" />
-                <element signature="e#1906#2119#0" />
-                <element signature="e#2121#2346#0" />
-                <element signature="e#2349#2631#0" />
-                <element signature="e#3078#3463#0" />
-                <element signature="e#3466#3865#0" />
-                <element signature="e#4251#4344#0" />
-                <element signature="e#4347#4613#0" />
-                <element signature="e#4616#4839#0" />
-                <element signature="e#4842#5405#0" />
-                <element signature="e#5408#5816#0" />
-                <element signature="e#5818#6314#0" />
-                <element signature="e#6317#6738#0" />
-                <element signature="e#6741#7038#0" />
-                <element signature="e#7041#7160#0" />
-                <element signature="e#7163#7580#0" />
-                <element signature="e#7583#8323#0" />
-                <element signature="e#8326#8951#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/camera.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2190">
-              <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
-              <folding>
-                <element signature="e#13#35#0" expanded="true" />
-                <element signature="e#143#2545#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -212,11 +196,9 @@
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="70" />
-    <option name="y" value="810" />
-    <option name="width" value="1080" />
-    <option name="height" value="923" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -267,7 +249,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Staurn" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Staurn" TARGET_NAME="Staurn" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Staurn" RUN_TARGET_NAME="Staurn">
+    <configuration name="saturn" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" RUN_PATH="$PROJECT_DIR$/render.cpp" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -292,15 +274,15 @@
       <workItem from="1552682523832" duration="22180000" />
       <workItem from="1552712326191" duration="11099000" />
       <workItem from="1552799826265" duration="30178000" />
+      <workItem from="1552881310150" duration="318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79868000" />
+    <option name="totallyTimeSpent" value="80186000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1080" height="1920" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.028901733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -316,7 +298,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.32930845" />
+      <window_info active="true" anchor="bottom" id="CMake" order="11" visible="true" weight="0.32857144" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3837838" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -392,21 +374,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment-2-solution.cpp" />
     <entry file="file://$PROJECT_DIR$/assignment-2-solution.c" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeCache.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake_install.cmake">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/render.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draw.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="791" column="19" selection-start-line="791" selection-start-column="19" selection-end-line="791" selection-end-column="19" />
+          <folding>
+            <element signature="e#356#781#0" />
+            <element signature="e#783#1333#0" />
+            <element signature="e#1335#1535#0" />
+            <element signature="e#1537#1923#0" />
+            <element signature="e#1925#6432#0" />
+            <element signature="e#2265#2675#0" />
+            <element signature="e#4635#4900#0" />
+            <element signature="e#6434#6663#0" />
+            <element signature="e#6434#6862#0" />
+            <element signature="e#6864#7324#0" />
+            <element signature="e#7326#7614#0" />
+            <element signature="e#7616#7904#0" />
+            <element signature="e#7906#8156#0" />
+            <element signature="e#8158#8408#0" />
+            <element signature="e#8410#10820#0" />
+            <element signature="e#10822#19820#0" />
+            <element signature="e#18947#27468#0" />
+            <element signature="e#37178#37180#0" />
+            <element signature="e#62580#62613#0" />
+            <element signature="e#62503#63467#0" />
+            <element signature="e#63469#64432#0" />
+            <element signature="e#64434#64668#0" />
+            <element signature="e#64670#64904#0" />
+            <element signature="e#64906#65160#0" />
+            <element signature="e#65162#66133#0" />
+            <element signature="e#66135#66278#0" />
+            <element signature="e#68779#69792#0" />
+            <element signature="e#66485#66836#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matrix.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -442,70 +478,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/camera.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
+        <state relative-caret-position="581">
           <caret line="255" column="27" selection-start-line="255" selection-start-column="27" selection-end-line="255" selection-end-column="27" />
           <folding>
-            <element signature="e#13#35#0" expanded="true" />
             <element signature="e#143#2545#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draw.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="791" column="19" selection-start-line="791" selection-start-column="19" selection-end-line="791" selection-end-column="19" />
-          <folding>
-            <element signature="e#356#781#0" />
-            <element signature="e#783#1333#0" />
-            <element signature="e#1335#1535#0" />
-            <element signature="e#1537#1923#0" />
-            <element signature="e#1925#6432#0" />
-            <element signature="e#2265#2675#0" />
-            <element signature="e#4635#4900#0" />
-            <element signature="e#6434#6663#0" />
-            <element signature="e#6434#6862#0" />
-            <element signature="e#6864#7324#0" />
-            <element signature="e#7326#7614#0" />
-            <element signature="e#7616#7904#0" />
-            <element signature="e#7906#8156#0" />
-            <element signature="e#8158#8408#0" />
-            <element signature="e#8410#10820#0" />
-            <element signature="e#10822#19820#0" />
-            <element signature="e#18947#27468#0" />
-            <element signature="e#37178#37180#0" />
-            <element signature="e#62580#62613#0" />
-            <element signature="e#62503#63467#0" />
-            <element signature="e#63469#64432#0" />
-            <element signature="e#64434#64668#0" />
-            <element signature="e#64670#64904#0" />
-            <element signature="e#64906#65160#0" />
-            <element signature="e#65162#66133#0" />
-            <element signature="e#66135#66278#0" />
-            <element signature="e#68779#69792#0" />
-            <element signature="e#66485#66836#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/render.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

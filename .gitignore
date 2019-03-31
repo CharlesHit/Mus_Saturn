@@ -30,3 +30,82 @@
 *.exe
 *.out
 *.app
+.idea/workspace.xml
+camera.h
+cmake-build-debug/cmake_install.cmake
+cmake-build-debug/CMakeCache.txt
+cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake
+cmake-build-debug/CMakeFiles/3.13.2/CMakeCXXCompiler.cmake
+cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin
+cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_CXX.bin
+cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake
+cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/CMakeCCompilerId.c
+cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+cmake-build-debug/CMakeFiles/clion-environment.txt
+cmake-build-debug/CMakeFiles/clion-log.txt
+cmake-build-debug/CMakeFiles/cmake.check_cache
+cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake
+cmake-build-debug/CMakeFiles/CMakeOutput.log
+cmake-build-debug/CMakeFiles/feature_tests.bin
+cmake-build-debug/CMakeFiles/feature_tests.c
+cmake-build-debug/CMakeFiles/feature_tests.cxx
+cmake-build-debug/CMakeFiles/Makefile.cmake
+cmake-build-debug/CMakeFiles/Makefile2
+cmake-build-debug/CMakeFiles/progress.marks
+cmake-build-debug/CMakeFiles/Staurn.dir/build.make
+cmake-build-debug/CMakeFiles/Staurn.dir/C.includecache
+cmake-build-debug/CMakeFiles/Staurn.dir/cmake_clean.cmake
+cmake-build-debug/CMakeFiles/Staurn.dir/CXX.includecache
+cmake-build-debug/CMakeFiles/Staurn.dir/depend.internal
+cmake-build-debug/CMakeFiles/Staurn.dir/depend.make
+cmake-build-debug/CMakeFiles/Staurn.dir/DependInfo.cmake
+cmake-build-debug/CMakeFiles/Staurn.dir/flags.make
+cmake-build-debug/CMakeFiles/Staurn.dir/link.txt
+cmake-build-debug/CMakeFiles/Staurn.dir/progress.make
+cmake-build-debug/CMakeFiles/TargetDirectories.txt
+cmake-build-debug/Makefile
+cmake-build-debug/Staurn
+cmake-build-debug/Staurn.cbp
+cmake-build-debug/Staurn.dSYM/Contents/Info.plist
+cmake-build-debug/Staurn.dSYM/Contents/Resources/DWARF/Staurn
+Debug/Staurn
+Staurn.build/Debug/ALL_BUILD.build/dgph
+Staurn.build/Debug/ALL_BUILD.build/dgph 2
+Staurn.build/Debug/ALL_BUILD.build/dgph~
+Staurn.build/Debug/ALL_BUILD.build/Script-1AED17A2E7734CEAA4A3959F.sh
+Staurn.build/Debug/ALL_BUILD.build/Script-E0AEF031CADE4973A8A2F0A5.sh
+Staurn.build/Debug/Staurn.build/dgph
+Staurn.build/Debug/Staurn.build/dgph 2
+Staurn.build/Debug/Staurn.build/dgph 3
+Staurn.build/Debug/Staurn.build/dgph 4
+Staurn.build/Debug/Staurn.build/dgph 5
+Staurn.build/Debug/Staurn.build/dgph 6
+Staurn.build/Debug/Staurn.build/dgph 7
+Staurn.build/Debug/Staurn.build/dgph 8
+Staurn.build/Debug/Staurn.build/dgph 9
+Staurn.build/Debug/Staurn.build/dgph~
+Staurn.build/Debug/Staurn.build/dgph~ 2
+Staurn.build/Debug/Staurn.build/dgph~ 3
+Staurn.build/Debug/Staurn.build/Objects-normal-asan-ubsan/x86_64/render.dia
+Staurn.build/Debug/Staurn.build/Objects-normal-asan-ubsan/x86_64/Staurn.LinkFileList
+Staurn.build/Debug/Staurn.build/Objects-normal-asan-ubsan/x86_64/Staurn_dependency_info.dat
+Staurn.build/Debug/Staurn.build/Objects-normal/x86_64/render.dia
+Staurn.build/Debug/Staurn.build/StaticAnalyzer/Staurn/Staurn/normal/x86_64/render.plist
+Staurn.build/Debug/ZERO_CHECK.build/dgph
+Staurn.build/Debug/ZERO_CHECK.build/dgph 2
+Staurn.build/Debug/ZERO_CHECK.build/dgph 3
+Staurn.build/Debug/ZERO_CHECK.build/dgph 4
+Staurn.build/Debug/ZERO_CHECK.build/dgph~
+Staurn.build/Debug/ZERO_CHECK.build/dgph~ 2
+Staurn.build/Debug/ZERO_CHECK.build/dgph~ 3
+Staurn.build/Debug/ZERO_CHECK.build/dgph~ 4
+Staurn.build/Debug/ZERO_CHECK.build/dgph~ 5
+Staurn.build/Debug/ZERO_CHECK.build/dgph~ 6
+Staurn.build/Debug/ZERO_CHECK.build/Script-7FC7983E363C4AD59CFDCA3F.sh
+Staurn.build/Debug/ZERO_CHECK.build/Script-F244FBDADF874EF39FFE4AC6.sh
+Staurn.xcodeproj/project.pbxproj
+Staurn.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Staurn.xcodeproj/project.xcworkspace/xcuserdata/Charles.xcuserdatad/UserInterfaceState.xcuserstate
+Staurn.xcodeproj/xcshareddata/xcschemes/ALL_BUILD.xcscheme
+Staurn.xcodeproj/xcuserdata/Charles.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+Staurn.xcodeproj/xcuserdata/Charles.xcuserdatad/xcschemes/xcschememanagement.plist

@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		2B50D95278564A699F4D45DA /* ALL_BUILD */ = {
+		413FA82D001E44C29816250C /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = B4DA3206FDD844C9B9EAF6C8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 4B49847C134945BEBE9BA365 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
-				E0AEF031CADE4973A8A2F0A5 /* CMake Rules */,
+				1AED17A2E7734CEAA4A3959F /* CMake Rules */,
 			);
 			dependencies = (
-				09BC715AC2524AEC9498E699 /* PBXTargetDependency */,
-				B0306AA8E4BE45F08D9FD584 /* PBXTargetDependency */,
+				52936816777D46D2A070C1AB /* PBXTargetDependency */,
+				AF66D97908BC4C078E71F03B /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
 		};
-		BC8EB6D4F7EB40238058FCC4 /* ZERO_CHECK */ = {
+		58AA60F934A44821B23CFB7A /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = EADCDBB3D77D4D898D43CF8F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 9B56655D23A24D318FEEDF7A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
-				7FC7983E363C4AD59CFDCA3F /* CMake Rules */,
+				F244FBDADF874EF39FFE4AC6 /* CMake Rules */,
 			);
 			dependencies = (
 			);
@@ -34,158 +34,147 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		4EE36736331F40148B628EC3 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B96DAD825414B5FB2404388 /* render.cpp */; };
+		56638954223F50FF000579E8 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74D1C9979D6D4A30BC5F7A54 /* render.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		875937C234174AECAE03810A /* PBXContainerItemProxy */ = {
+		43468CEC0ADF4E03B28F0461 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 96B15C91160146B18688A721 /* Project object */;
+			containerPortal = F28D5DC7098C4F4A9492F774 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 514E55573CDF4759864911DF;
-			remoteInfo = Staurn;
-		};
-		8E22EAF5ED7B4CF2BD2D8716 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96B15C91160146B18688A721 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BC8EB6D4F7EB40238058FCC4;
+			remoteGlobalIDString = 58AA60F934A44821B23CFB7A;
 			remoteInfo = ZERO_CHECK;
 		};
-		944486712D734EDBBE0DCFF4 /* PBXContainerItemProxy */ = {
+		51C7C21AB39347B2B4B471BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 96B15C91160146B18688A721 /* Project object */;
+			containerPortal = F28D5DC7098C4F4A9492F774 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BC8EB6D4F7EB40238058FCC4;
+			remoteGlobalIDString = 869C2BBFC3384E07918C85D0;
+			remoteInfo = Staurn;
+		};
+		84F837B1EACC4F5AB2F7188A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F28D5DC7098C4F4A9492F774 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58AA60F934A44821B23CFB7A;
 			remoteInfo = ZERO_CHECK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B96DAD825414B5FB2404388 /* render.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = render.cpp; sourceTree = SOURCE_ROOT; };
-		564EFADB223D639300DEF867 /* draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
-		564EFADC223D639300DEF867 /* data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
-		564EFADD223D639300DEF867 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
-		564EFADE223D639300DEF867 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
-		6C610517475D404F8E75A376 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		82FB6706A8404E99B9AB1CCE /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		E6344E652791443D9D9B6D0B /* Staurn */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Staurn; sourceTree = BUILT_PRODUCTS_DIR; };
+		0013CD935EBB4870A4DDE632 /* Staurn */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Staurn; sourceTree = BUILT_PRODUCTS_DIR; };
+		56170CFD224001C800A36C95 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		56170CFE2240021400A36C95 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		56638952223F50EE000579E8 /* data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
+		56638953223F50EF000579E8 /* draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
+		57FDF514942F42BEAF3DB280 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		74D1C9979D6D4A30BC5F7A54 /* render.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = render.cpp; sourceTree = SOURCE_ROOT; };
+		A7883CF43A904782809A5ECF /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		2296E2444CC34190AD801B55 /* Products */ = {
+		3E7FC0EA4AC6486D93DCCFC8 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				E6344E652791443D9D9B6D0B /* Staurn */,
+				D46D0B33D7524DE385A6AFB6 /* CMake Rules */,
+				57FDF514942F42BEAF3DB280 /* CMakeLists.txt */,
 			);
-			name = Products;
+			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		756FA461005B40D0BE94356D /* Staurn */ = {
+		737AE379A43448218C8690D9 /* Staurn */ = {
 			isa = PBXGroup;
 			children = (
-				8F6EE335CE274457B5CED5DB /* Source Files */,
-				6C610517475D404F8E75A376 /* CMakeLists.txt */,
+				C812C52BB2604AA3ABE3F137 /* Source Files */,
+				A7883CF43A904782809A5ECF /* CMakeLists.txt */,
 			);
 			name = Staurn;
 			sourceTree = "<group>";
 		};
-		8F6EE335CE274457B5CED5DB /* Source Files */ = {
+		9C08F5ED3AEA4CD19D69A16F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				564EFADD223D639300DEF867 /* camera.h */,
-				564EFADC223D639300DEF867 /* data.h */,
-				564EFADB223D639300DEF867 /* draw.h */,
-				564EFADE223D639300DEF867 /* matrix.h */,
-				4B96DAD825414B5FB2404388 /* render.cpp */,
+				0013CD935EBB4870A4DDE632 /* Staurn */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2BF2B05E7AB4D2393EA3D44 = {
+			isa = PBXGroup;
+			children = (
+				737AE379A43448218C8690D9 /* Staurn */,
+				3E7FC0EA4AC6486D93DCCFC8 /* ALL_BUILD */,
+				9C08F5ED3AEA4CD19D69A16F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C812C52BB2604AA3ABE3F137 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				56170CFE2240021400A36C95 /* matrix.h */,
+				56170CFD224001C800A36C95 /* camera.h */,
+				56638952223F50EE000579E8 /* data.h */,
+				56638953223F50EF000579E8 /* draw.h */,
+				74D1C9979D6D4A30BC5F7A54 /* render.cpp */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		B54AE988DC69452586580B1E /* CMake Rules */ = {
+		D46D0B33D7524DE385A6AFB6 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		F423EAD936AF4C7E92B31A96 = {
-			isa = PBXGroup;
-			children = (
-				756FA461005B40D0BE94356D /* Staurn */,
-				FAA360223A014526B2890C6E /* ALL_BUILD */,
-				2296E2444CC34190AD801B55 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		FAA360223A014526B2890C6E /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				B54AE988DC69452586580B1E /* CMake Rules */,
-				82FB6706A8404E99B9AB1CCE /* CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		514E55573CDF4759864911DF /* Staurn */ = {
+		869C2BBFC3384E07918C85D0 /* Staurn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48E3D24AFAAF4FA1863E582A /* Build configuration list for PBXNativeTarget "Staurn" */;
+			buildConfigurationList = 75CAC39F45F942EEAA22415A /* Build configuration list for PBXNativeTarget "Staurn" */;
 			buildPhases = (
-				2415C284BBA64736BB86F72D /* Sources */,
+				1B03B646A02D461591686BDE /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				53EBC7F75DCA408E9BBB0260 /* PBXTargetDependency */,
+				65EC7D59C2F748CF976DD464 /* PBXTargetDependency */,
 			);
 			name = Staurn;
 			productName = Staurn;
-			productReference = E6344E652791443D9D9B6D0B /* Staurn */;
+			productReference = 0013CD935EBB4870A4DDE632 /* Staurn */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		96B15C91160146B18688A721 /* Project object */ = {
+		F28D5DC7098C4F4A9492F774 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1010;
 			};
-			buildConfigurationList = D64FE5AEE1AE4045BF5D4346 /* Build configuration list for PBXProject "Staurn" */;
+			buildConfigurationList = 611BE723E11E4BB1AAD0BFBD /* Build configuration list for PBXProject "Staurn" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F423EAD936AF4C7E92B31A96;
+			mainGroup = A2BF2B05E7AB4D2393EA3D44;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B50D95278564A699F4D45DA /* ALL_BUILD */,
-				514E55573CDF4759864911DF /* Staurn */,
-				BC8EB6D4F7EB40238058FCC4 /* ZERO_CHECK */,
+				413FA82D001E44C29816250C /* ALL_BUILD */,
+				869C2BBFC3384E07918C85D0 /* Staurn */,
+				58AA60F934A44821B23CFB7A /* ZERO_CHECK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7FC7983E363C4AD59CFDCA3F /* CMake Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/Charles/Library/Mobile\\ Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ -f /Users/Charles/Library/Mobile\\ Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
-			showEnvVarsInLog = 0;
-		};
-		E0AEF031CADE4973A8A2F0A5 /* CMake Rules */ = {
+		1AED17A2E7734CEAA4A3959F /* CMake Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,105 +185,50 @@
 			shellScript = "make -C /Users/Charles/Library/Mobile\\ Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ -f /Users/Charles/Library/Mobile\\ Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
 			showEnvVarsInLog = 0;
 		};
+		F244FBDADF874EF39FFE4AC6 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Charles/Library/Mobile\\ Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ -f /Users/Charles/Library/Mobile\\ Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2415C284BBA64736BB86F72D /* Sources */ = {
+		1B03B646A02D461591686BDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EE36736331F40148B628EC3 /* render.cpp in Sources */,
+				56638954223F50FF000579E8 /* render.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		09BC715AC2524AEC9498E699 /* PBXTargetDependency */ = {
+		52936816777D46D2A070C1AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 514E55573CDF4759864911DF /* Staurn */;
-			targetProxy = 875937C234174AECAE03810A /* PBXContainerItemProxy */;
+			target = 869C2BBFC3384E07918C85D0 /* Staurn */;
+			targetProxy = 51C7C21AB39347B2B4B471BD /* PBXContainerItemProxy */;
 		};
-		53EBC7F75DCA408E9BBB0260 /* PBXTargetDependency */ = {
+		65EC7D59C2F748CF976DD464 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC8EB6D4F7EB40238058FCC4 /* ZERO_CHECK */;
-			targetProxy = 8E22EAF5ED7B4CF2BD2D8716 /* PBXContainerItemProxy */;
+			target = 58AA60F934A44821B23CFB7A /* ZERO_CHECK */;
+			targetProxy = 84F837B1EACC4F5AB2F7188A /* PBXContainerItemProxy */;
 		};
-		B0306AA8E4BE45F08D9FD584 /* PBXTargetDependency */ = {
+		AF66D97908BC4C078E71F03B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC8EB6D4F7EB40238058FCC4 /* ZERO_CHECK */;
-			targetProxy = 944486712D734EDBBE0DCFF4 /* PBXContainerItemProxy */;
+			target = 58AA60F934A44821B23CFB7A /* ZERO_CHECK */;
+			targetProxy = 43468CEC0ADF4E03B28F0461 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2A6ABA41A9194E28B9E3A738 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"$(inherited)",
-				);
-			};
-			name = Debug;
-		};
-		41204B42E3C644A8ABD45912 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = /usr/X11R6/include;
-				INSTALL_PATH = "";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CPLUSPLUSFLAGS = "    ";
-				OTHER_LDFLAGS = (
-					"-Wl,-search_paths_first",
-					"-Wl,-headerpad_max_install_names",
-					"-framework",
-					OpenGL,
-					"-framework",
-					OpenGL,
-					"-framework",
-					GLUT,
-					"-framework",
-					Cocoa,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Staurn;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"$(inherited)",
-				);
-			};
-			name = Debug;
-		};
-		4BD1602B9D85423193782593 /* MinSizeRel */ = {
+		0A04F3A74A56414D83F735EB /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -335,148 +269,21 @@
 			};
 			name = MinSizeRel;
 		};
-		5156635217264B7B91A5FEBE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"$(inherited)",
-				);
-			};
-			name = Release;
-		};
-		69DDB4C6553649D086B41616 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"$(inherited)",
-				);
-			};
-			name = MinSizeRel;
-		};
-		77927CC89EF44E87ADA6F380 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"$(inherited)",
-				);
-			};
-			name = RelWithDebInfo;
-		};
-		881DBCEEA4374A2BB46B4D66 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"$(inherited)",
-				);
-			};
-			name = RelWithDebInfo;
-		};
-		9E8C618FE8AB4687899B072C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/build";
-			};
-			name = Release;
-		};
-		A449DE856EBC4361A5AB9189 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/build";
-			};
-			name = RelWithDebInfo;
-		};
-		AB5EA921455E4CCBA9850284 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/build";
-			};
-			name = MinSizeRel;
-		};
-		C5E063F40C554966A25F20DB /* Release */ = {
+		191FF7AA88E04CADB58C0689 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = /usr/X11R6/include;
 				INSTALL_PATH = "";
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "    ";
 				OTHER_LDFLAGS = (
 					"-Wl,-search_paths_first",
 					"-Wl,-headerpad_max_install_names",
@@ -501,34 +308,9 @@
 					"$(inherited)",
 				);
 			};
-			name = Release;
-		};
-		CD50F9B36E4F4001B83A45E5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-					"$(inherited)",
-				);
-			};
 			name = Debug;
 		};
-		D5BFF0E653634939B3E8B3D1 /* MinSizeRel */ = {
+		32EDA857417747D09D379D00 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -553,7 +335,32 @@
 			};
 			name = MinSizeRel;
 		};
-		D9FF502141CC4955817703C8 /* Debug */ = {
+		3966DEA907E248A5A45EE6D3 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		449AE7C4A2864FFA85E9C218 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ONLY_ACTIVE_ARCH = YES;
@@ -562,7 +369,50 @@
 			};
 			name = Debug;
 		};
-		DB5471D1333E469E94DBEA5E /* RelWithDebInfo */ = {
+		6054D43F7BA24B69BB88DAA4 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		6173813F7DF84022BC793C8D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/build";
+			};
+			name = MinSizeRel;
+		};
+		66155A2EC7D342B0A4684BE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/build";
+			};
+			name = Release;
+		};
+		7C5B86137FC74907A1B70050 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -603,7 +453,48 @@
 			};
 			name = RelWithDebInfo;
 		};
-		FB6E1CB1E3534BBEB648561D /* Release */ = {
+		7C8F615A648145E484F83046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = /usr/X11R6/include;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					OpenGL,
+					"-framework",
+					OpenGL,
+					"-framework",
+					GLUT,
+					"-framework",
+					Cocoa,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Staurn;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		7D6DE76EB9BE440C96BED459 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -628,54 +519,163 @@
 			};
 			name = Release;
 		};
+		8B247C6AB57B42B187022CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		90417C2163694DC4BEED9374 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		E49011460BD34F03AC574636 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		E87E9F8895D74D4FBB250F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		FB9F5D86C8754B15AA63F3C4 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = "/Users/Charles/Library/Mobile Documents/com~apple~CloudDocs/Project/Graphics_from_AtoZ/build";
+			};
+			name = RelWithDebInfo;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48E3D24AFAAF4FA1863E582A /* Build configuration list for PBXNativeTarget "Staurn" */ = {
+		4B49847C134945BEBE9BA365 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41204B42E3C644A8ABD45912 /* Debug */,
-				C5E063F40C554966A25F20DB /* Release */,
-				4BD1602B9D85423193782593 /* MinSizeRel */,
-				DB5471D1333E469E94DBEA5E /* RelWithDebInfo */,
+				E49011460BD34F03AC574636 /* Debug */,
+				E87E9F8895D74D4FBB250F4C /* Release */,
+				3966DEA907E248A5A45EE6D3 /* MinSizeRel */,
+				6054D43F7BA24B69BB88DAA4 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		B4DA3206FDD844C9B9EAF6C8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		611BE723E11E4BB1AAD0BFBD /* Build configuration list for PBXProject "Staurn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A6ABA41A9194E28B9E3A738 /* Debug */,
-				5156635217264B7B91A5FEBE /* Release */,
-				69DDB4C6553649D086B41616 /* MinSizeRel */,
-				881DBCEEA4374A2BB46B4D66 /* RelWithDebInfo */,
+				449AE7C4A2864FFA85E9C218 /* Debug */,
+				66155A2EC7D342B0A4684BE0 /* Release */,
+				6173813F7DF84022BC793C8D /* MinSizeRel */,
+				FB9F5D86C8754B15AA63F3C4 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D64FE5AEE1AE4045BF5D4346 /* Build configuration list for PBXProject "Staurn" */ = {
+		75CAC39F45F942EEAA22415A /* Build configuration list for PBXNativeTarget "Staurn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D9FF502141CC4955817703C8 /* Debug */,
-				9E8C618FE8AB4687899B072C /* Release */,
-				AB5EA921455E4CCBA9850284 /* MinSizeRel */,
-				A449DE856EBC4361A5AB9189 /* RelWithDebInfo */,
+				191FF7AA88E04CADB58C0689 /* Debug */,
+				7C8F615A648145E484F83046 /* Release */,
+				0A04F3A74A56414D83F735EB /* MinSizeRel */,
+				7C5B86137FC74907A1B70050 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		EADCDBB3D77D4D898D43CF8F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		9B56655D23A24D318FEEDF7A /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD50F9B36E4F4001B83A45E5 /* Debug */,
-				FB6E1CB1E3534BBEB648561D /* Release */,
-				D5BFF0E653634939B3E8B3D1 /* MinSizeRel */,
-				77927CC89EF44E87ADA6F380 /* RelWithDebInfo */,
+				8B247C6AB57B42B187022CE1 /* Debug */,
+				7D6DE76EB9BE440C96BED459 /* Release */,
+				32EDA857417747D09D379D00 /* MinSizeRel */,
+				90417C2163694DC4BEED9374 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 96B15C91160146B18688A721 /* Project object */;
+	rootObject = F28D5DC7098C4F4A9492F774 /* Project object */;
 }

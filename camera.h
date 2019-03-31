@@ -265,4 +265,5 @@ void cameraInitialization() {
     //dmatrix_t C ; /* The camera matrix */
     dmat_alloc(&C, 4, 4);
     C = *build_camera_matrix(&pointEye, &g);
+    C_original = C;
 }

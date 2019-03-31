@@ -18,6 +18,7 @@ typedef struct {
 } dmatrix_t;
 
 static dmatrix_t C;
+dmatrix_t C_original;
 
 void error(const char error_text[])
 {

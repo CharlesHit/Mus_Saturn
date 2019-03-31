@@ -1,4 +1,4 @@
-
+#include <vector>
 #include <X11/Xlib.h>
 #include <OpenGL/gl.h>
 #include <OpenGl/glu.h>
@@ -18,8 +18,8 @@ Window w;
 XEvent e;
 int s;
 
-unsigned char frame[windowW * windowH * 3];
-double depth[windowW * windowH];
+vector<char> frame(windowW * windowH * 3);
+vector<double> depth(windowW * windowH);
 
 dmatrix_t *crossProduct(dmatrix_t vect_A, dmatrix_t vect_B)
 {
@@ -325,9 +325,14 @@ int minimum_intersection(int intersections[], int n)
 }
 
 void
-XFillConvexPolygon(Display *d, Window w, int s, dmatrix_t P[], int n, unsigned int r, unsigned int g, unsigned int bb,
+XFillConvexPolygon(Display *d, Window w, int s, dmatrix_t xx, dmatrix_t yy, dmatrix_t zz, int n, unsigned int r, unsigned int g, unsigned int bb,
                    double floatDepth)
 {
+    dmatrix_t P[3];
+    for (int i = 0; i < 3; i++) dmat_alloc(&P[i], 4, 1);
+    P[0] = xx;
+    P[1] = yy;
+    P[2] = zz;
 
     unsigned int i, j;
     int y, y_min, y_max, min_int, max_int;
@@ -401,8 +406,6 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
     double floatDepth_xyz, floatDepth_yzb, brightness_xyz, brightness_yzb;
 
     //initialization
-    dmatrix_t P[3];
-    for (int i = 0; i < 3; i++) dmat_alloc(&P[i], 4, 1);
     dmatrix_t x, y, z, buffer, center, vecYX, vecXZ, vecYZ, vecZbuffer, pointCenter_xyz, pointCenter_yzb, vecNorm_xyz, vecNorm_yzb, vecLight_xyz, vecLight_yzb, pointNormEnd_xyz, pointNormEnd_yzb;//x, y, z for torus, center of every circle on torus
     dmat_alloc(&x, 4, 1);
     dmat_alloc(&y, 4, 1);
@@ -548,12 +551,9 @@ void torus(unsigned int r, unsigned int g, unsigned int b)
             y = *perspective_projection(dmat_mult(&C, &y));
             z = *perspective_projection(dmat_mult(&C, &z));
             buffer = *perspective_projection(dmat_mult(&C, &buffer));
-            P[0] = x;
-            P[1] = y;
-            P[2] = z;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness_xyz, g * brightness_xyz, b * brightness_xyz, floatDepth_xyz);
-            P[0] = buffer;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness_yzb, g * brightness_yzb, b * brightness_yzb, floatDepth_yzb);
+
+            XFillConvexPolygon(d, w, s, x, y, z, 3, r * brightness_xyz, g * brightness_xyz, b * brightness_xyz, floatDepth_xyz);
+            XFillConvexPolygon(d, w, s, buffer, y, z, 3, r * brightness_yzb, g * brightness_yzb, b * brightness_yzb, floatDepth_yzb);
         }
     }
 
@@ -591,8 +591,6 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
     double floatDepth_xyz, floatDepth_yzb, brightness_xyz, brightness_yzb;
 
     //initialization
-    dmatrix_t P[3];
-    for (int i = 0; i < 3; i++) dmat_alloc(&P[i], 4, 1);
     dmatrix_t x, y, z, buffer, center, vecYX, vecXZ, vecYZ, vecZbuffer, pointCenter_xyz, pointCenter_yzb, vecNorm_xyz, vecNorm_yzb, vecLight_xyz, vecLight_yzb, pointNormEnd_xyz, pointNormEnd_yzb;//x, y, z for torus, center of every circle on torus
     dmat_alloc(&x, 4, 1);
     dmat_alloc(&y, 4, 1);
@@ -736,12 +734,9 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
             y = *perspective_projection(dmat_mult(&C, &y));
             z = *perspective_projection(dmat_mult(&C, &z));
             buffer = *perspective_projection(dmat_mult(&C, &buffer));
-            P[0] = x;
-            P[1] = y;
-            P[2] = z;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness_xyz, g * brightness_xyz, b * brightness_xyz, floatDepth_xyz);
-            P[0] = buffer;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness_yzb, g * brightness_yzb, b * brightness_yzb, floatDepth_yzb);
+
+            XFillConvexPolygon(d, w, s, x, y, z, 3, r * brightness_xyz, g * brightness_xyz, b * brightness_xyz, floatDepth_xyz);
+            XFillConvexPolygon(d, w, s, buffer, y, z, 3, r * brightness_yzb, g * brightness_yzb, b * brightness_yzb, floatDepth_yzb);
         }
     }
 
@@ -768,199 +763,199 @@ void sphere(unsigned int r, unsigned int g, unsigned int b)
 
 }
 
-void cone(unsigned int red, unsigned int g, unsigned int b)
-{
-    //matrix designed for cone;
-    // dmatrix_t D = C;
-
-    // D = *rotation('z', M_PI/12, D);
-    // //D = *rotation('x', 12*M_PI/12, D);
-    // //D = *rotation('y', -1*M_PI/12, D);
-    // D = *translation(0, 0, -480, D);
-
-
-    //information of sphere
-    double floatDepth_xyz, floatDepth_yzb, brightness_xyz, brightness_yzb;
-    double height = 200;
-    double r = 10;
-    double theta = 0.0 * M_PI;     //range of sphere
-    double u = 0.0;
-    double dtheta = M_PI / 16;
-    double du = height / 10;
-
-    //initialization
-    dmatrix_t P[3];
-    for (int i = 0; i < 3; i++) dmat_alloc(&P[i], 4, 1);
-    dmatrix_t x, y, z, buffer, center, vecYX, vecXZ, vecYZ, vecZbuffer, pointCenter_xyz, pointCenter_yzb, vecNorm_xyz, vecNorm_yzb, vecLight_xyz, vecLight_yzb, pointNormEnd_xyz, pointNormEnd_yzb;//x, y, z for torus, center of every circle on torus
-    dmat_alloc(&x, 4, 1);
-    dmat_alloc(&y, 4, 1);
-    dmat_alloc(&z, 4, 1);
-    dmat_alloc(&vecYX, 4, 1);
-    dmat_alloc(&vecXZ, 4, 1);
-    dmat_alloc(&vecYZ, 4, 1);
-    dmat_alloc(&vecZbuffer, 4, 1);
-    dmat_alloc(&buffer, 4, 1);
-    dmat_alloc(&center, 4, 1);
-    dmat_alloc(&pointCenter_xyz, 4, 1);
-    dmat_alloc(&pointCenter_yzb, 4, 1);
-    dmat_alloc(&vecNorm_xyz, 4, 1);
-    dmat_alloc(&vecNorm_yzb, 4, 1);
-    dmat_alloc(&vecLight_xyz, 4, 1);
-    dmat_alloc(&vecLight_yzb, 4, 1);
-    dmat_alloc(&pointNormEnd_xyz, 4, 1);
-    dmat_alloc(&pointNormEnd_yzb, 4, 1);
-
-    //the buffer is the x's opposite, so x, y, z, buffer makes a circle:
-    // x - z
-    // |
-    // y - buffer
-    buffer.m[1][1] = r * cos(theta) * (height - u) / height;
-    buffer.m[2][1] =  r * sin(theta) * (height - u) / height;
-    buffer.m[3][1] = u;
-    buffer.m[4][1] = 1;
-    buffer = *perspective_projection(dmat_mult(&C, &buffer));
-
-    //light
-    dmatrix_t pointLight;
-    dmat_alloc(&pointLight, 4, 1);
-    pointLight.m[1][1] = -100.0;
-    pointLight.m[2][1] = -100.0;
-    pointLight.m[3][1] = 300.0;
-    pointLight.m[4][1] = 1.0;
-
-    /* Notice: the sphere's u, that is every slices' equation, only need run a half */
-    double delta = 2; double start = 0;
-    for (u = 0; u + du <= height; u += du)
-    {
-        for (theta = (start) * M_PI; theta <= (delta + start) * M_PI; theta += dtheta)
-        {
-            //0.x, y, z calculation part;
-            x.m[1][1] = r * cos(theta) * (u) / height;
-            x.m[2][1] = r * sin(theta) * (u) / height;
-            x.m[3][1] = u;
-            x.m[4][1] = 1;
-            y.m[1][1] = r * cos(theta + dtheta) * (u) / height;
-            y.m[2][1] = r * sin(theta + dtheta) * (u) / height;
-            y.m[3][1] = u;
-            y.m[4][1] = 1;
-            z.m[1][1] = r * cos(theta) * (u + du) / height;
-            z.m[2][1] = r * sin(theta) * (u + du) / height;
-            z.m[3][1] = u + du;
-            z.m[4][1] = 1;
-            buffer.m[1][1] = r * cos(theta + dtheta) * (u + du) / height;
-            buffer.m[2][1] = r * sin(theta + dtheta) *  (u + du) / height;
-            buffer.m[3][1] = u + du;
-            buffer.m[4][1] = 1;
-
-            //1. edge vectors
-            dmat_alloc(&vecYX, 4, 1);
-            vecYX = *dmat_sub(&x, &y);//x-y
-            vecXZ = *dmat_sub(&z, &x);
-            vecYZ = *dmat_sub(&z, &y);
-            vecZbuffer = *dmat_sub(&buffer, &z);
-
-            //2.point center
-            pointCenter_xyz.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1]) / 3;
-            pointCenter_xyz.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1]) / 3;
-            pointCenter_xyz.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1]) / 3;
-            pointCenter_xyz.m[4][1] = 1;
-
-            pointCenter_yzb.m[1][1] = (z.m[1][1] + y.m[1][1] + buffer.m[1][1]) / 3;
-            pointCenter_yzb.m[2][1] = (z.m[2][1] + y.m[2][1] + buffer.m[2][1]) / 3;
-            pointCenter_yzb.m[3][1] = (z.m[3][1] + y.m[3][1] + buffer.m[3][1]) / 3;
-            pointCenter_yzb.m[4][1] = 1;
-
-
-            //3. Depth of each mesh
-            floatDepth_xyz = dmat_norm(dmat_sub(&pointEye, &pointCenter_xyz));
-            floatDepth_yzb = dmat_norm(dmat_sub(&pointEye, &pointCenter_yzb));
-
-
-            //4.calculate Normal vectors
-            //vecNorm_xyz = *crossProduct(vecYX, vecXZ); //the classical way
-            vecNorm_xyz = *dmat_sub(&pointCenter_xyz, &center);
-            vecNorm_xyz = *dmat_normalize(&vecNorm_xyz);
-            vecNorm_xyz = *dmat_scalar_mult(&vecNorm_xyz, 100); //normailize it and times 10 could make it looks clear when visualize normalvector.
-
-            //vecNorm_yzb = *crossProduct(vecYZ, vecZbuffer); //the classical way
-            vecNorm_yzb = *dmat_sub(&pointCenter_yzb, &center);
-            vecNorm_yzb = *dmat_normalize(&vecNorm_yzb);
-            vecNorm_yzb = *dmat_scalar_mult(&vecNorm_yzb, 100); //normailize it and times 10 could make it looks clear when visualize normalvector.
-
-
-            //5. light vector
-            vecLight_xyz = *dmat_sub(&pointLight, &pointCenter_xyz);
-            vecLight_yzb = *dmat_sub(&pointLight, &pointCenter_yzb);
-
-
-            //6. brightness: cos of two vector X light
-            brightness_xyz = angle(vecNorm_xyz,vecLight_xyz);if (brightness_xyz < 0)brightness_xyz = 0;
-            brightness_yzb = angle(vecNorm_yzb,vecLight_yzb);if (brightness_yzb < 0)brightness_yzb = 0;
-
-
-            //7.light-center & normal vector (optional)
-            //7.1 xyz
-            pointNormEnd_xyz = *dmat_add(&pointCenter_xyz,
-                                         &vecNorm_xyz);//pointNormEnd_xyz = pointCenter_xyz+Normalvector
-            pointNormEnd_xyz = *perspective_projection(dmat_mult(&C, &pointNormEnd_xyz));
-            pointCenter_xyz = *perspective_projection(dmat_mult(&C, &pointCenter_xyz));
-            vecLight_xyz = *perspective_projection(dmat_mult(&C, &pointLight));
-            //light to point
-            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], vecLight_xyz.m[1][1], vecLight_xyz.m[2][1], 0, 0);
-            //normal vector
-            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], pointNormEnd_xyz.m[1][1], pointNormEnd_xyz.m[2][1],0,0);
-
-            //7.2 yzb
-            pointNormEnd_yzb = *dmat_add(&pointCenter_yzb,
-                                         &vecNorm_yzb);//pointNormEnd_yzb = pointCenter_xyz+Normalvector
-            pointNormEnd_yzb = *perspective_projection(dmat_mult(&C, &pointNormEnd_yzb));
-            pointCenter_yzb = *perspective_projection(dmat_mult(&C, &pointCenter_yzb));
-            vecLight_yzb = *perspective_projection(dmat_mult(&C, &pointLight));
-            //light to point
-            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], vecLight_xyz.m[1][1], vecLight_xyz.m[2][1], 0, 0);
-            //normal vector
-            //Line(pointCenter_yzb.m[1][1], pointCenter_yzb.m[2][1], pointNormEnd_yzb.m[1][1], pointNormEnd_yzb.m[2][1],0,0);
-
-
-            //8. draw the meshes.
-            //Line3D(x, y, C);
-            //Line3D(x, z, C);
-            //Line3D(y, z, C);
-
-
-            //9.fill with color
-            x = *perspective_projection(dmat_mult(&C, &x));
-            y = *perspective_projection(dmat_mult(&C, &y));
-            z = *perspective_projection(dmat_mult(&C, &z));
-            buffer = *perspective_projection(dmat_mult(&C, &buffer));
-            P[0] = x;
-            P[1] = y;
-            P[2] = z;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness_xyz, g * brightness_xyz, b * brightness_xyz, floatDepth_xyz);
-            P[0] = buffer;
-            XFillConvexPolygon(d, w, s, P, 3, r * brightness_yzb, g * brightness_yzb, b * brightness_yzb, floatDepth_yzb);
-        }
-    }
-    //9.clean
-    free_dmatrix(x.m, 1, x.l, 1, x.c);
-    free_dmatrix(y.m, 1, y.l, 1, y.c);
-    free_dmatrix(z.m, 1, z.l, 1, z.c);
-    free_dmatrix(buffer.m, 1, buffer.l, 1, buffer.c);
-    free_dmatrix(pointLight.m, 1, pointLight.l, 1, pointLight.c);
-    free_dmatrix(vecYX.m, 1, vecYX.l, 1, vecYX.c);
-    free_dmatrix(vecXZ.m, 1, vecXZ.l, 1, vecXZ.c);
-    free_dmatrix(vecYZ.m, 1, vecYZ.l, 1, vecYZ.c);
-    free_dmatrix(vecZbuffer.m, 1, vecZbuffer.l, 1, vecZbuffer.c);
-    free_dmatrix(center.m, 1, center.l, 1, center.c);
-    free_dmatrix(pointCenter_xyz.m, 1, pointCenter_xyz.l, 1, pointCenter_xyz.c);
-    free_dmatrix(pointCenter_yzb.m, 1, pointCenter_yzb.l, 1, pointCenter_yzb.c);
-    free_dmatrix(vecNorm_xyz.m, 1, vecNorm_xyz.l, 1, vecNorm_xyz.c);
-    free_dmatrix(vecNorm_yzb.m, 1, vecNorm_yzb.l, 1, vecNorm_yzb.c);
-    free_dmatrix(vecLight_xyz.m, 1, vecLight_xyz.l, 1, vecLight_xyz.c);
-    free_dmatrix(vecLight_yzb.m, 1, vecLight_yzb.l, 1, vecLight_yzb.c);
-    free_dmatrix(pointNormEnd_xyz.m, 1, pointNormEnd_xyz.l, 1, pointNormEnd_xyz.c);
-    free_dmatrix(pointNormEnd_yzb.m, 1, pointNormEnd_yzb.l, 1, pointNormEnd_yzb.c);
-}
+//void cone(unsigned int red, unsigned int g, unsigned int b)
+//{
+//    //matrix designed for cone;
+//    // dmatrix_t D = C;
+//
+//    // D = *rotation('z', M_PI/12, D);
+//    // //D = *rotation('x', 12*M_PI/12, D);
+//    // //D = *rotation('y', -1*M_PI/12, D);
+//    // D = *translation(0, 0, -480, D);
+//
+//
+//    //information of sphere
+//    double floatDepth_xyz, floatDepth_yzb, brightness_xyz, brightness_yzb;
+//    double height = 200;
+//    double r = 10;
+//    double theta = 0.0 * M_PI;     //range of sphere
+//    double u = 0.0;
+//    double dtheta = M_PI / 16;
+//    double du = height / 10;
+//
+//    //initialization
+//    dmatrix_t P[3];
+//    for (int i = 0; i < 3; i++) dmat_alloc(&P[i], 4, 1);
+//    dmatrix_t x, y, z, buffer, center, vecYX, vecXZ, vecYZ, vecZbuffer, pointCenter_xyz, pointCenter_yzb, vecNorm_xyz, vecNorm_yzb, vecLight_xyz, vecLight_yzb, pointNormEnd_xyz, pointNormEnd_yzb;//x, y, z for torus, center of every circle on torus
+//    dmat_alloc(&x, 4, 1);
+//    dmat_alloc(&y, 4, 1);
+//    dmat_alloc(&z, 4, 1);
+//    dmat_alloc(&vecYX, 4, 1);
+//    dmat_alloc(&vecXZ, 4, 1);
+//    dmat_alloc(&vecYZ, 4, 1);
+//    dmat_alloc(&vecZbuffer, 4, 1);
+//    dmat_alloc(&buffer, 4, 1);
+//    dmat_alloc(&center, 4, 1);
+//    dmat_alloc(&pointCenter_xyz, 4, 1);
+//    dmat_alloc(&pointCenter_yzb, 4, 1);
+//    dmat_alloc(&vecNorm_xyz, 4, 1);
+//    dmat_alloc(&vecNorm_yzb, 4, 1);
+//    dmat_alloc(&vecLight_xyz, 4, 1);
+//    dmat_alloc(&vecLight_yzb, 4, 1);
+//    dmat_alloc(&pointNormEnd_xyz, 4, 1);
+//    dmat_alloc(&pointNormEnd_yzb, 4, 1);
+//
+//    //the buffer is the x's opposite, so x, y, z, buffer makes a circle:
+//    // x - z
+//    // |
+//    // y - buffer
+//    buffer.m[1][1] = r * cos(theta) * (height - u) / height;
+//    buffer.m[2][1] =  r * sin(theta) * (height - u) / height;
+//    buffer.m[3][1] = u;
+//    buffer.m[4][1] = 1;
+//    buffer = *perspective_projection(dmat_mult(&C, &buffer));
+//
+//    //light
+//    dmatrix_t pointLight;
+//    dmat_alloc(&pointLight, 4, 1);
+//    pointLight.m[1][1] = -100.0;
+//    pointLight.m[2][1] = -100.0;
+//    pointLight.m[3][1] = 300.0;
+//    pointLight.m[4][1] = 1.0;
+//
+//    /* Notice: the sphere's u, that is every slices' equation, only need run a half */
+//    double delta = 2; double start = 0;
+//    for (u = 0; u + du <= height; u += du)
+//    {
+//        for (theta = (start) * M_PI; theta <= (delta + start) * M_PI; theta += dtheta)
+//        {
+//            //0.x, y, z calculation part;
+//            x.m[1][1] = r * cos(theta) * (u) / height;
+//            x.m[2][1] = r * sin(theta) * (u) / height;
+//            x.m[3][1] = u;
+//            x.m[4][1] = 1;
+//            y.m[1][1] = r * cos(theta + dtheta) * (u) / height;
+//            y.m[2][1] = r * sin(theta + dtheta) * (u) / height;
+//            y.m[3][1] = u;
+//            y.m[4][1] = 1;
+//            z.m[1][1] = r * cos(theta) * (u + du) / height;
+//            z.m[2][1] = r * sin(theta) * (u + du) / height;
+//            z.m[3][1] = u + du;
+//            z.m[4][1] = 1;
+//            buffer.m[1][1] = r * cos(theta + dtheta) * (u + du) / height;
+//            buffer.m[2][1] = r * sin(theta + dtheta) *  (u + du) / height;
+//            buffer.m[3][1] = u + du;
+//            buffer.m[4][1] = 1;
+//
+//            //1. edge vectors
+//            dmat_alloc(&vecYX, 4, 1);
+//            vecYX = *dmat_sub(&x, &y);//x-y
+//            vecXZ = *dmat_sub(&z, &x);
+//            vecYZ = *dmat_sub(&z, &y);
+//            vecZbuffer = *dmat_sub(&buffer, &z);
+//
+//            //2.point center
+//            pointCenter_xyz.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1]) / 3;
+//            pointCenter_xyz.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1]) / 3;
+//            pointCenter_xyz.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1]) / 3;
+//            pointCenter_xyz.m[4][1] = 1;
+//
+//            pointCenter_yzb.m[1][1] = (z.m[1][1] + y.m[1][1] + buffer.m[1][1]) / 3;
+//            pointCenter_yzb.m[2][1] = (z.m[2][1] + y.m[2][1] + buffer.m[2][1]) / 3;
+//            pointCenter_yzb.m[3][1] = (z.m[3][1] + y.m[3][1] + buffer.m[3][1]) / 3;
+//            pointCenter_yzb.m[4][1] = 1;
+//
+//
+//            //3. Depth of each mesh
+//            floatDepth_xyz = dmat_norm(dmat_sub(&pointEye, &pointCenter_xyz));
+//            floatDepth_yzb = dmat_norm(dmat_sub(&pointEye, &pointCenter_yzb));
+//
+//
+//            //4.calculate Normal vectors
+//            //vecNorm_xyz = *crossProduct(vecYX, vecXZ); //the classical way
+//            vecNorm_xyz = *dmat_sub(&pointCenter_xyz, &center);
+//            vecNorm_xyz = *dmat_normalize(&vecNorm_xyz);
+//            vecNorm_xyz = *dmat_scalar_mult(&vecNorm_xyz, 100); //normailize it and times 10 could make it looks clear when visualize normalvector.
+//
+//            //vecNorm_yzb = *crossProduct(vecYZ, vecZbuffer); //the classical way
+//            vecNorm_yzb = *dmat_sub(&pointCenter_yzb, &center);
+//            vecNorm_yzb = *dmat_normalize(&vecNorm_yzb);
+//            vecNorm_yzb = *dmat_scalar_mult(&vecNorm_yzb, 100); //normailize it and times 10 could make it looks clear when visualize normalvector.
+//
+//
+//            //5. light vector
+//            vecLight_xyz = *dmat_sub(&pointLight, &pointCenter_xyz);
+//            vecLight_yzb = *dmat_sub(&pointLight, &pointCenter_yzb);
+//
+//
+//            //6. brightness: cos of two vector X light
+//            brightness_xyz = angle(vecNorm_xyz,vecLight_xyz);if (brightness_xyz < 0)brightness_xyz = 0;
+//            brightness_yzb = angle(vecNorm_yzb,vecLight_yzb);if (brightness_yzb < 0)brightness_yzb = 0;
+//
+//
+//            //7.light-center & normal vector (optional)
+//            //7.1 xyz
+//            pointNormEnd_xyz = *dmat_add(&pointCenter_xyz,
+//                                         &vecNorm_xyz);//pointNormEnd_xyz = pointCenter_xyz+Normalvector
+//            pointNormEnd_xyz = *perspective_projection(dmat_mult(&C, &pointNormEnd_xyz));
+//            pointCenter_xyz = *perspective_projection(dmat_mult(&C, &pointCenter_xyz));
+//            vecLight_xyz = *perspective_projection(dmat_mult(&C, &pointLight));
+//            //light to point
+//            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], vecLight_xyz.m[1][1], vecLight_xyz.m[2][1], 0, 0);
+//            //normal vector
+//            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], pointNormEnd_xyz.m[1][1], pointNormEnd_xyz.m[2][1],0,0);
+//
+//            //7.2 yzb
+//            pointNormEnd_yzb = *dmat_add(&pointCenter_yzb,
+//                                         &vecNorm_yzb);//pointNormEnd_yzb = pointCenter_xyz+Normalvector
+//            pointNormEnd_yzb = *perspective_projection(dmat_mult(&C, &pointNormEnd_yzb));
+//            pointCenter_yzb = *perspective_projection(dmat_mult(&C, &pointCenter_yzb));
+//            vecLight_yzb = *perspective_projection(dmat_mult(&C, &pointLight));
+//            //light to point
+//            //Line(pointCenter_xyz.m[1][1], pointCenter_xyz.m[2][1], vecLight_xyz.m[1][1], vecLight_xyz.m[2][1], 0, 0);
+//            //normal vector
+//            //Line(pointCenter_yzb.m[1][1], pointCenter_yzb.m[2][1], pointNormEnd_yzb.m[1][1], pointNormEnd_yzb.m[2][1],0,0);
+//
+//
+//            //8. draw the meshes.
+//            //Line3D(x, y, C);
+//            //Line3D(x, z, C);
+//            //Line3D(y, z, C);
+//
+//
+//            //9.fill with color
+//            x = *perspective_projection(dmat_mult(&C, &x));
+//            y = *perspective_projection(dmat_mult(&C, &y));
+//            z = *perspective_projection(dmat_mult(&C, &z));
+//            buffer = *perspective_projection(dmat_mult(&C, &buffer));
+//            P[0] = x;
+//            P[1] = y;
+//            P[2] = z;
+//            XFillConvexPolygon(d, w, s, P, 3, r * brightness_xyz, g * brightness_xyz, b * brightness_xyz, floatDepth_xyz);
+//            P[0] = buffer;
+//            XFillConvexPolygon(d, w, s, P, 3, r * brightness_yzb, g * brightness_yzb, b * brightness_yzb, floatDepth_yzb);
+//        }
+//    }
+//    //9.clean
+//    free_dmatrix(x.m, 1, x.l, 1, x.c);
+//    free_dmatrix(y.m, 1, y.l, 1, y.c);
+//    free_dmatrix(z.m, 1, z.l, 1, z.c);
+//    free_dmatrix(buffer.m, 1, buffer.l, 1, buffer.c);
+//    free_dmatrix(pointLight.m, 1, pointLight.l, 1, pointLight.c);
+//    free_dmatrix(vecYX.m, 1, vecYX.l, 1, vecYX.c);
+//    free_dmatrix(vecXZ.m, 1, vecXZ.l, 1, vecXZ.c);
+//    free_dmatrix(vecYZ.m, 1, vecYZ.l, 1, vecYZ.c);
+//    free_dmatrix(vecZbuffer.m, 1, vecZbuffer.l, 1, vecZbuffer.c);
+//    free_dmatrix(center.m, 1, center.l, 1, center.c);
+//    free_dmatrix(pointCenter_xyz.m, 1, pointCenter_xyz.l, 1, pointCenter_xyz.c);
+//    free_dmatrix(pointCenter_yzb.m, 1, pointCenter_yzb.l, 1, pointCenter_yzb.c);
+//    free_dmatrix(vecNorm_xyz.m, 1, vecNorm_xyz.l, 1, vecNorm_xyz.c);
+//    free_dmatrix(vecNorm_yzb.m, 1, vecNorm_yzb.l, 1, vecNorm_yzb.c);
+//    free_dmatrix(vecLight_xyz.m, 1, vecLight_xyz.l, 1, vecLight_xyz.c);
+//    free_dmatrix(vecLight_yzb.m, 1, vecLight_yzb.l, 1, vecLight_yzb.c);
+//    free_dmatrix(pointNormEnd_xyz.m, 1, pointNormEnd_xyz.l, 1, pointNormEnd_xyz.c);
+//    free_dmatrix(pointNormEnd_yzb.m, 1, pointNormEnd_yzb.l, 1, pointNormEnd_yzb.c);
+//}
 
 //
 //void meteor(unsigned int r, unsigned int g, unsigned int b)
@@ -1149,144 +1144,144 @@ void cone(unsigned int red, unsigned int g, unsigned int b)
 //    free_dmatrix(pointLight.m, 1, pointLight.l, 1, pointLight.c);
 //}
 //
+//
+//void plane_cut_and_fill(dmatrix_t x, dmatrix_t y, dmatrix_t z, dmatrix_t D, unsigned int r, unsigned int g, unsigned int b )
+//{
+//    if (dmat_compare(&x, &z)==true)
+//        return;
+//
+//    dmatrix_t dxy, dxz, dyz, u, v, v1, v2, pointCenter_xyz, pointCenter_yzb;//x, y, z for plane
+//    u = *dmat_duplicate(&x);
+//
+//    double delta  = 0.1;
+//    dxy = *dmat_scalar_mult(dmat_sub(&y,&x),delta);
+//    dxz = *dmat_scalar_mult(dmat_sub(&z,&x),delta);
+//    dyz = *dmat_scalar_mult(dmat_sub(&z,&y),delta);
+//
+////        X
+////        u
+////       / \
+////      v - v1
+////       \/
+////   Y   v2   Z
+//
+//    for(u; dmat_compare(&y, dmat_add(&u, &dxy))==false; dmat_add(&u, &dxy))//这样应该会缺左下一个角
+//    {
+//        v = *dmat_add(&u, &dxy);
+//        v1 = *dmat_add(&u, &dxy);
+//        v2 = *dmat_add(&v1, &dxy);
+//
+//        pointCenter_xyz = *dmat_add(&u, &v);
+//        pointCenter_xyz = *dmat_add(&pointCenter_xyz, &v1);
+//        pointCenter_xyz = *dmat_scalar_mult(&pointCenter_xyz, 1/3);
+//        double floatDepth_xyz = dmat_norm(dmat_sub(&pointEye, &pointCenter_xyz));
+//
+//
+//        pointCenter_yzb = *dmat_add(&v, &v1);
+//        pointCenter_yzb = *dmat_add(&pointCenter_yzb, &v2);
+//        pointCenter_yzb = *dmat_scalar_mult(&pointCenter_yzb, 1/3);
+//        double floatDepth_yzb = dmat_norm(dmat_sub(&pointEye, &pointCenter_yzb));
+//
+//        Line3D(u, v, C);
+//        Line3D(v2, v, C);
+//        Line3D(v1, v, C);  //So the right most edge is missed;
+//
+//        dmatrix_t P[3];
+//        for (int i = 0; i < 3; i++)dmat_alloc(&P[i], 4, 1);
+//        u = *perspective_projection(dmat_mult(&D, &u));
+//        v = *perspective_projection(dmat_mult(&D, &v));
+//        v1 = *perspective_projection(dmat_mult(&D, &v1));
+//        v2 = *perspective_projection(dmat_mult(&D, &v2));
+//        P[0] = u;
+//        P[1] = v;
+//        P[2] = v1;
+//        XFillConvexPolygon(d, w, s, P, 3, r, g, b, floatDepth_xyz);
+//        P[0] = v2;
+//        XFillConvexPolygon(d, w, s, P, 3, r, g, b, floatDepth_yzb);
+//    }
+//
+//    plane_cut_and_fill(*dmat_add(&x, &dxz), *dmat_add(&y, &dyz), z, D, r, g, b);
+//
+//
+//}
+//
+//void plane_write_up()
+//{
+//    dmatrix_t x, y, z, pointCenter_xyz;//x, y, z for plane
+//    dmat_alloc(&x, 4, 1);
+//    dmat_alloc(&y, 4, 1);
+//    dmat_alloc(&z, 4, 1);
+//    dmat_alloc(&pointCenter_xyz, 4, 1);
+//
+//    x.m[1][1] = 0;
+//    x.m[2][1] = 0;
+//    x.m[3][1] = 0;
+//    x.m[4][1] = 1;
+//
+//    y.m[1][1] = 200;
+//    y.m[2][1] = 200;
+//    y.m[3][1] = 200;
+//    y.m[4][1] = 1;
+//
+//    z.m[1][1] = 200;
+//    z.m[2][1] = 0;
+//    z.m[3][1] = 100;
+//    z.m[4][1] = 1;
+//
+//    pointCenter_xyz.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1]) / 3;
+//    pointCenter_xyz.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1]) / 3;
+//    pointCenter_xyz.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1]) / 3;
+//    pointCenter_xyz.m[4][1] = 1;
+//    double floatDepth_xyz = dmat_norm(dmat_sub(&pointEye, &pointCenter_xyz));
+//    cout<<"plane write up's distance: "<<floatDepth_xyz<<endl;
+//
+//    Line3D(x, y, C);
+//    Line3D(x, z, C);
+//    Line3D(z, y, C);
+//    dmatrix_t P[3];
+//    for (int i = 0; i < 3; i++)dmat_alloc(&P[i], 4, 1);
+//    x = *perspective_projection(dmat_mult(&C, &x));
+//    y = *perspective_projection(dmat_mult(&C, &y));
+//    z = *perspective_projection(dmat_mult(&C, &z));
+//    P[0] = x;
+//    P[1] = y;
+//    P[2] = z;
+//
+//
+//    XFillConvexPolygon(d, w, s, P, 3, 250, 250, 250, floatDepth_xyz);
+//}
+//
+//void plane_dark_down()
+//{
+//    dmatrix_t x, y, z, dxy, dxz, u, v, pointCenter_xyz;//x, y, z for plane
+//    dmat_alloc(&x, 4, 1);
+//    dmat_alloc(&y, 4, 1);
+//    dmat_alloc(&z, 4, 1);
+//    dmat_alloc(&u, 4, 1);
+//    dmat_alloc(&v, 4, 1);
+//    dmat_alloc(&dxy, 4, 1);
+//    dmat_alloc(&dxz, 4, 1);
+//    dmat_alloc(&pointCenter_xyz, 4, 1);
+//
+//    x.m[1][1] = 0;
+//    x.m[2][1] = 0;
+//    x.m[3][1] = -200;
+//    x.m[4][1] = 1;
+//
+//    y.m[1][1] = 100;
+//    y.m[2][1] = 100;
+//    y.m[3][1] = 50;
+//    y.m[4][1] = 1;
+//
+//    z.m[1][1] = 200;
+//    z.m[2][1] = 0;
+//    z.m[3][1] = 50;
+//    z.m[4][1] = 1;
+//
+//    plane_cut_and_fill(x, y, z, C, 100, 100, 100);
+//}
 
-void plane_cut_and_fill(dmatrix_t x, dmatrix_t y, dmatrix_t z, dmatrix_t D, unsigned int r, unsigned int g, unsigned int b )
-{
-    if (dmat_compare(&x, &z)==true)
-        return;
-
-    dmatrix_t dxy, dxz, dyz, u, v, v1, v2, pointCenter_xyz, pointCenter_yzb;//x, y, z for plane
-    u = *dmat_duplicate(&x);
-
-    double delta  = 0.1;
-    dxy = *dmat_scalar_mult(dmat_sub(&y,&x),delta);
-    dxz = *dmat_scalar_mult(dmat_sub(&z,&x),delta);
-    dyz = *dmat_scalar_mult(dmat_sub(&z,&y),delta);
-
-//        X
-//        u
-//       / \
-//      v - v1
-//       \/
-//   Y   v2   Z
-
-    for(u; dmat_compare(&y, dmat_add(&u, &dxy))==false; dmat_add(&u, &dxy))//这样应该会缺左下一个角
-    {
-        v = *dmat_add(&u, &dxy);
-        v1 = *dmat_add(&u, &dxy);
-        v2 = *dmat_add(&v1, &dxy);
-
-        pointCenter_xyz = *dmat_add(&u, &v);
-        pointCenter_xyz = *dmat_add(&pointCenter_xyz, &v1);
-        pointCenter_xyz = *dmat_scalar_mult(&pointCenter_xyz, 1/3);
-        double floatDepth_xyz = dmat_norm(dmat_sub(&pointEye, &pointCenter_xyz));
-
-
-        pointCenter_yzb = *dmat_add(&v, &v1);
-        pointCenter_yzb = *dmat_add(&pointCenter_yzb, &v2);
-        pointCenter_yzb = *dmat_scalar_mult(&pointCenter_yzb, 1/3);
-        double floatDepth_yzb = dmat_norm(dmat_sub(&pointEye, &pointCenter_yzb));
-
-        Line3D(u, v, C);
-        Line3D(v2, v, C);
-        Line3D(v1, v, C);  //So the right most edge is missed;
-
-        dmatrix_t P[3];
-        for (int i = 0; i < 3; i++)dmat_alloc(&P[i], 4, 1);
-        u = *perspective_projection(dmat_mult(&D, &u));
-        v = *perspective_projection(dmat_mult(&D, &v));
-        v1 = *perspective_projection(dmat_mult(&D, &v1));
-        v2 = *perspective_projection(dmat_mult(&D, &v2));
-        P[0] = u;
-        P[1] = v;
-        P[2] = v1;
-        XFillConvexPolygon(d, w, s, P, 3, r, g, b, floatDepth_xyz);
-        P[0] = v2;
-        XFillConvexPolygon(d, w, s, P, 3, r, g, b, floatDepth_yzb);
-    }
-
-    plane_cut_and_fill(*dmat_add(&x, &dxz), *dmat_add(&y, &dyz), z, D, r, g, b);
-
-
-}
-
-void plane_write_up()
-{
-    dmatrix_t x, y, z, pointCenter_xyz;//x, y, z for plane
-    dmat_alloc(&x, 4, 1);
-    dmat_alloc(&y, 4, 1);
-    dmat_alloc(&z, 4, 1);
-    dmat_alloc(&pointCenter_xyz, 4, 1);
-
-    x.m[1][1] = 0;
-    x.m[2][1] = 0;
-    x.m[3][1] = 0;
-    x.m[4][1] = 1;
-
-    y.m[1][1] = 200;
-    y.m[2][1] = 200;
-    y.m[3][1] = 200;
-    y.m[4][1] = 1;
-
-    z.m[1][1] = 200;
-    z.m[2][1] = 0;
-    z.m[3][1] = 100;
-    z.m[4][1] = 1;
-
-    pointCenter_xyz.m[1][1] = (x.m[1][1] + y.m[1][1] + z.m[1][1]) / 3;
-    pointCenter_xyz.m[2][1] = (x.m[2][1] + y.m[2][1] + z.m[2][1]) / 3;
-    pointCenter_xyz.m[3][1] = (x.m[3][1] + y.m[3][1] + z.m[3][1]) / 3;
-    pointCenter_xyz.m[4][1] = 1;
-    double floatDepth_xyz = dmat_norm(dmat_sub(&pointEye, &pointCenter_xyz));
-    cout<<"plane write up's distance: "<<floatDepth_xyz<<endl;
-
-    Line3D(x, y, C);
-    Line3D(x, z, C);
-    Line3D(z, y, C);
-    dmatrix_t P[3];
-    for (int i = 0; i < 3; i++)dmat_alloc(&P[i], 4, 1);
-    x = *perspective_projection(dmat_mult(&C, &x));
-    y = *perspective_projection(dmat_mult(&C, &y));
-    z = *perspective_projection(dmat_mult(&C, &z));
-    P[0] = x;
-    P[1] = y;
-    P[2] = z;
-
-
-    XFillConvexPolygon(d, w, s, P, 3, 250, 250, 250, floatDepth_xyz);
-}
-
-void plane_dark_down()
-{
-    dmatrix_t x, y, z, dxy, dxz, u, v, pointCenter_xyz;//x, y, z for plane
-    dmat_alloc(&x, 4, 1);
-    dmat_alloc(&y, 4, 1);
-    dmat_alloc(&z, 4, 1);
-    dmat_alloc(&u, 4, 1);
-    dmat_alloc(&v, 4, 1);
-    dmat_alloc(&dxy, 4, 1);
-    dmat_alloc(&dxz, 4, 1);
-    dmat_alloc(&pointCenter_xyz, 4, 1);
-
-    x.m[1][1] = 0;
-    x.m[2][1] = 0;
-    x.m[3][1] = -200;
-    x.m[4][1] = 1;
-
-    y.m[1][1] = 100;
-    y.m[2][1] = 100;
-    y.m[3][1] = 50;
-    y.m[4][1] = 1;
-
-    z.m[1][1] = 200;
-    z.m[2][1] = 0;
-    z.m[3][1] = 50;
-    z.m[4][1] = 1;
-
-    plane_cut_and_fill(x, y, z, C, 100, 100, 100);
-}
-
-void x_axis()
+void x_axi (dmatrix_t camera)
 {
     dmatrix_t o, x;
     dmat_alloc(&o, 4, 1);
@@ -1301,10 +1296,10 @@ void x_axis()
     x.m[3][1] = 0;
     x.m[4][1] = 1;
 
-    Line3D(o, x, C);
+    Line3D(o, x, camera);
 }
 
-void y_axis()
+void y_axi(dmatrix_t camera)
 {
     dmatrix_t o, y;
     dmat_alloc(&o, 4, 1);
@@ -1319,10 +1314,10 @@ void y_axis()
     y.m[3][1] = 0;
     y.m[4][1] = 1;
 
-    Line3D(o, y, C);
+    Line3D(o, y, camera);
 }
 
-void z_axis()
+void z_axi(dmatrix_t camera)
 {
     dmatrix_t o, z;//x, y, z for plane
     dmat_alloc(&o, 4, 1);
@@ -1337,10 +1332,10 @@ void z_axis()
     z.m[3][1] = -200;
     z.m[4][1] = 1;
 
-    Line3D(o, z, C);
+    Line3D(o, z, camera);
 }
 
-void original()
+void original(dmatrix_t camera)
 {
     dmatrix_t o;//x, y, z for plane
     dmat_alloc(&o, 4, 1);
@@ -1348,7 +1343,7 @@ void original()
     o.m[2][1] = 0;
     o.m[3][1] = 0;
     o.m[4][1] = 1;
-    o = *perspective_projection(dmat_mult(&C, &o));
+    o = *perspective_projection(dmat_mult(&camera, &o));
     DrawPixel(o.m[1][1], o.m[2][1], 255, 0, 0, 0);//original is always the closest;
     DrawPixel(o.m[1][1] + 1, o.m[2][1], 255, 0, 0, 0);//original is always the closest;
     DrawPixel(o.m[1][1] - 1, o.m[2][1], 255, 0, 0, 0);//original is always the closest;
@@ -1362,10 +1357,10 @@ void original()
 
 void coordinate(bool x, bool y, bool z, bool origin)
 {
-    if (x) x_axis();
-    if (y) y_axis();
-    if (z) z_axis();
-    if (origin) original();
+    if (x) x_axi(C_original);
+    if (y) y_axi(C_original);
+    if (z) z_axi(C_original);
+    if (origin) original(C_original);
 }
 
 void eyes()
@@ -1395,7 +1390,7 @@ void eyes()
 
 void Draw()
 {
-    cone(200, 200, 200);
+    //cone(200, 200, 200);
     sphere(237, 189, 101);
     torus(220, 220, 220);
     //plane_write_up();
@@ -1407,15 +1402,17 @@ void Draw()
 
 void OnDisplay()
 {
-    memset(frame, 255, windowW * windowH * 3);
-    for (long long i = 0; i < windowH * windowW; i++)
-    { depth[i] = 9999999999; }
+    for (long i = 0; i < windowH * windowW*3; i++){ frame.push_back(255); }
+    for (long i = 0; i < windowH * windowW; i++) { depth.push_back(99999999); }
     //main print function
     Draw();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glDrawPixels(windowW, windowH, GL_RGB, GL_UNSIGNED_BYTE, (GLubyte *) frame);
+    glDrawPixels(windowW, windowH, GL_RGB, GL_UNSIGNED_BYTE, (GLubyte *)&frame[0]);
     glFlush();
     glutSwapBuffers();
+
+    vector<char>().swap(frame);
+    vector<double>().swap(depth);
 }
 
 
