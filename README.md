@@ -1,6 +1,8 @@
-README.md
+# Saturn
 
-# Lighting, Shading and Hidder
+Author@ Charles H
+
+Enjoy the demo video first!
 
 ## User Interface
 
